@@ -1,43 +1,57 @@
-# Astro Starter Kit: Minimal
+# Carnegie Shoes
+
+The official frontend repository for **Carnegie Shoes**, implementing the Kinetic Mosaic design system with heavy brutalist aesthetics, vibrant color palettes, and community-focused styling.
+
+## 🚀 Quick Start
+
+Ensure you have Node.js version 22+ installed.
 
 ```sh
-npm create astro@latest -- --template minimal
+# Clone the repository and CD into the app directory
+cd c:\src\carnegieshoes\app
+
+# Install all dependencies (including DevDependencies for Playwright)
+npm install
+
+# Start the local development server on https://localhost:4321
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🧪 UI Visual Validation
 
-## 🚀 Project Structure
+We use **Playwright** to ensure that any CSS structural changes or responsive layout adjustments do not unintentionally break the design across our three supported viewports:
+- Desktop (1920x1080)
+- Tablet (iPad Mini)
+- Mobile (iPhone Safari)
 
-Inside of your Astro project, you'll see the following folders and files:
+### Running UI Tests
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+To execute the test suite (it will run against a dynamically spun-up local server):
+```sh
+npm run test:e2e
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### Visualizing Test Failures
+To open the comprehensive Playwright UI for a detailed diff of any failing visual tests, run:
+```sh
+npm run test:e2e:ui
+```
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Updating Baselines
+When you intentionally modify the visual look and feel of the site (e.g. changing spacing, typography, colors), the test suite will intentionally fail on visual regressions. To accept your new changes as the new source of truth and update the snapshot baselines matching your current local layout:
+```sh
+npm run test:e2e -- --update-snapshots
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+## 🧞 Build & Deploy
 
-## 🧞 Commands
+This project is built using Astro and deployed via **Cloudflare Pages**.
+The `@astrojs/cloudflare` server-side rendering adapter has been pre-configured to handle form processing via Astro Actions.
 
-All commands are run from the root of the project, from a terminal:
+```sh
+# Build for production
+npm run build
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+# Preview the built production site locally
+npm run preview
+```

@@ -5,13 +5,16 @@ import tailwindcss from '@tailwindcss/vite';
 import cloudflare from '@astrojs/cloudflare';
 import partytown from '@astrojs/partytown';
 
+import sitemap from '@astrojs/sitemap';
+
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://carnegieshoes.com.au',
   vite: {
     plugins: [tailwindcss()]
   },
 
   output: 'static',
   adapter: cloudflare(),
-  integrations: [partytown()]
+  integrations: [partytown(), sitemap()]
 });

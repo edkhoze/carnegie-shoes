@@ -1,8 +1,46 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ShoeStore",
+  "name": "Carnegie Shoes",
+  "image": "https://carnegieshoes.com.au/hero_lifestyle_1776061010416.png",
+  "@id": "https://carnegieshoes.com.au",
+  "url": "https://carnegieshoes.com.au",
+  "telephone": "(03) 9571 5203",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "119 Koornang Road",
+    "addressLocality": "Carnegie",
+    "addressRegion": "VIC",
+    "postalCode": "3163",
+    "addressCountry": "AU"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -37.8876412,
+    "longitude": 145.0566276
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "09:00",
+      "closes": "17:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "14:00"
+    }
+  ],
+  "sameAs": []
+};
 ---
 
-<Layout title="Carnegie Shoes | The Kinetic Mosaic">
+<Layout title="Carnegie Shoes | Family Shoe Store in Carnegie" description="Since 2014, Carnegie Shoes provides precision footwear fitting & orthotics. Durable, comfortable brands for infants, adults, and seniors in Carnegie VIC." structuredData={localBusinessSchema}>
   <section class="relative max-w-screen-2xl mx-auto px-8 md:px-12 mb-32">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-0 relative">
       <!-- Large Display Image -->
@@ -43,7 +81,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-auto md:h-[800px]">
       <!-- Large Focus Card -->
       <div class="md:col-span-2 md:row-span-2 bg-surface-container-low relative group overflow-hidden">
-        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Neighborhood energy" src="https://lh3.googleusercontent.com/aida/ADBb0ujRzPosvMvJsYq6zXyDCwJT5c0NzgzFfGARBfr0uUGrI0fRsoqhhV8jRmZ9PfxZoU7l2qvO5HKJZ5zzcD3Uxohtt6IHs3v-FPhIc9_QYvPKxMF_-OH4fu2Nmi6mr4bFCNqGxzG5A2lbnimzgqq8QmgWwoaK5wK2FOyDPw2pLQHQSbrJv_DqxUqfBrk9rPFsvd7C5f5pOalKZJyhC6DXtgKE_lqagGopEcErRllATx6lUBpUBM4ATIRVlL4yyIUt6s1Fnfv9qBI"/>
+        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Neighborhood energy" src="/neighborhood_energy.jpg"/>
         <div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors"></div>
         <div class="absolute bottom-0 left-0 p-8 text-white z-10">
           <span class="bg-primary px-3 py-1 font-label text-xs uppercase mb-2 inline-block">The Foundation</span>
@@ -52,35 +90,47 @@ import Layout from '../layouts/Layout.astro';
       </div>
       
       <!-- Kids Segment -->
-      <div class="md:col-span-2 bg-secondary-container p-8 flex flex-col justify-between relative overflow-hidden">
-        <div class="z-10">
-          <h3 class="font-headline text-4xl font-black text-on-secondary-container leading-none mb-4 uppercase">Little <br/>Legends</h3>
-          <p class="font-body text-on-secondary-container max-w-xs">Durable, vibrant footwear for the smallest members of our neighborhood.</p>
+      <div class="md:col-span-2 bg-secondary-container p-8 flex flex-col justify-between relative overflow-hidden group">
+        <!-- Hover Image -->
+        <img src="/hover_kids.png" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Kid trying shoes" />
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+        <!-- Content -->
+        <div class="z-10 relative">
+          <h3 class="font-headline text-4xl font-black text-on-secondary-container group-hover:text-white transition-colors duration-500 leading-none mb-4 uppercase">Little <br/>Legends</h3>
+          <p class="font-body text-on-secondary-container group-hover:text-stone-200 transition-colors duration-500 max-w-xs">Durable, vibrant footwear for the smallest members of our neighborhood.</p>
         </div>
-        <div class="flex justify-end z-10">
-          <span class="material-symbols-outlined text-6xl text-on-secondary-container opacity-30">child_care</span>
+        <div class="flex justify-end z-10 relative">
+          <span class="material-symbols-outlined text-6xl text-on-secondary-container opacity-30 group-hover:text-white group-hover:opacity-80 transition-all duration-500">child_care</span>
         </div>
-        <div class="absolute -right-8 -bottom-8 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
+        <div class="absolute -right-8 -bottom-8 w-48 h-48 bg-primary/10 rounded-full blur-3xl z-0 group-hover:opacity-0 transition-opacity duration-500"></div>
       </div>
       
       <!-- Senior Comfort -->
-      <div class="bg-surface-container-highest p-8 flex flex-col justify-between hover:bg-tertiary group transition-colors">
-        <div>
-          <span class="material-symbols-outlined text-4xl mb-4 group-hover:text-tertiary-container transition-colors">nordic_walking</span>
-          <h3 class="font-headline text-xl font-bold uppercase group-hover:text-white transition-colors">Golden Years Comfort</h3>
+      <div class="bg-surface-container-highest p-8 flex flex-col justify-between group transition-colors relative overflow-hidden">
+        <!-- Hover Image -->
+        <img src="/hover_senior.png" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Senior comfort" />
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+        <!-- Content -->
+        <div class="z-10 relative">
+          <span class="material-symbols-outlined text-4xl mb-4 group-hover:text-white transition-colors duration-500">nordic_walking</span>
+          <h3 class="font-headline text-xl font-bold uppercase group-hover:text-white transition-colors duration-500">Golden Years Comfort</h3>
         </div>
-        <a href="/services" class="font-label text-sm uppercase font-bold group-hover:text-tertiary-container transition-colors flex items-center gap-2">
+        <a href="/services" class="font-label text-sm uppercase font-bold text-on-surface group-hover:text-white transition-colors duration-500 flex items-center gap-2 z-10 relative">
             View Orthotics <span class="material-symbols-outlined text-xs">arrow_forward</span>
         </a>
       </div>
       
       <!-- Community Event -->
-      <div class="bg-primary-container p-8 flex flex-col justify-between">
-        <div class="font-headline text-on-primary-container">
+      <div class="bg-primary-container p-8 flex flex-col justify-between relative overflow-hidden group">
+        <!-- Hover Image -->
+        <img src="/hover_discount.png" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Local business discount" />
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+        <!-- Content -->
+        <div class="font-headline text-on-primary-container group-hover:text-white transition-colors duration-500 z-10 relative">
           <div class="text-4xl font-black">20%</div>
           <div class="text-lg font-bold uppercase leading-tight">Local Business Discount</div>
         </div>
-        <p class="font-body text-sm text-on-primary-container/80">Support local, save local. Available for Carnegie residents.</p>
+        <p class="font-body text-sm text-on-primary-container/80 group-hover:text-stone-200 transition-colors duration-500 z-10 relative">Support local, save local. Available for Carnegie residents.</p>
       </div>
     </div>
   </section>

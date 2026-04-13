@@ -3,10 +3,19 @@ import '../styles/global.css';
 
 interface Props {
   title: string;
+  description?: string;
+  structuredData?: any;
 }
 
-const { title } = Astro.props;
+const { 
+  title, 
+  description = "Since 2014, Carnegie Shoes provides precision footwear fitting & orthotics. Durable, comfortable brands for infants, adults, and seniors.",
+  structuredData
+} = Astro.props;
+
 const currentPath = Astro.url.pathname;
+const siteUrl = "https://carnegieshoes.com.au";
+const canonicalURL = new URL(currentPath, siteUrl).href;
 
 const navLinks = [
   { text: 'Home', url: '/' },
@@ -28,10 +37,22 @@ const getLinkClasses = (url: string) => {
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Carnegie Shoes - The Kinetic Mosaic" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
+    
+    <!-- Open Graph SEO -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Carnegie Shoes" />
+
+    {structuredData && (
+      <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
+    )}
     
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect" />
@@ -47,7 +68,7 @@ const getLinkClasses = (url: string) => {
     <!-- TopNavBar -->
     <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-outline-variant/30">
       <div class="flex justify-between items-center px-8 py-6 w-full max-w-screen-2xl mx-auto">
-        <a href="/" class="text-3xl font-black text-primary tracking-tighter font-headline">
+        <a href="/" class="text-3xl font-black text-primary tracking-tighter font-headline hover:text-secondary transition-colors">
           Carnegie Shoes
         </a>
         <div class="hidden md:flex gap-8 items-center">

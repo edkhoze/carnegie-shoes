@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://carnegieshoes.com.au/sitemap-index.xml
