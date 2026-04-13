@@ -45,7 +45,7 @@ const localBusinessSchema = {
     <div class="grid grid-cols-1 md:grid-cols-12 gap-0 relative">
       <!-- Large Display Image -->
       <div class="md:col-span-8 h-[716px] relative overflow-hidden bg-surface-container-low">
-        <img class="w-full h-full object-cover" alt="Stylish energetic sneakers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUatwWNRBqNHqNRk9MNUIKSVoxmYgVT391VU9FfVcByAlJsfUm6nXKnumi2XXd5bNI_vys0vg-H1qYznHViNIMfCJzDOWD9iOiF0XreVijVeo21F-7jUKA5FDyvD6WHpGzfYW1NgZagcq7l-IT_kFI2FBVf1xPdejFYrqhwndW1gBIP73E225Ncn2P8sh_rT0UyHzAg0wa1XLlZTZyqGJYtWyRROfkAsLQloCi6anqwS4CHIJqEj9crzVBTW2nnkCVOI_-1NvhSg"/>
+        <img class="w-full h-full object-cover" fetchpriority="high" decoding="async" alt="Stylish energetic sneakers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUatwWNRBqNHqNRk9MNUIKSVoxmYgVT391VU9FfVcByAlJsfUm6nXKnumi2XXd5bNI_vys0vg-H1qYznHViNIMfCJzDOWD9iOiF0XreVijVeo21F-7jUKA5FDyvD6WHpGzfYW1NgZagcq7l-IT_kFI2FBVf1xPdejFYrqhwndW1gBIP73E225Ncn2P8sh_rT0UyHzAg0wa1XLlZTZyqGJYtWyRROfkAsLQloCi6anqwS4CHIJqEj9crzVBTW2nnkCVOI_-1NvhSg"/>
         <div class="absolute inset-0 bg-gradient-to-t from-tertiary/20 to-transparent"></div>
       </div>
       <!-- Overlapping Text Block -->
@@ -58,7 +58,7 @@ const localBusinessSchema = {
             Carnegie Shoes is a small, well-established family business fitting and selling shoes for everyone from kids to seniors.
         </p>
         <div class="flex gap-4">
-          <a href="/brands" class="bg-primary text-on-primary px-8 py-4 font-headline font-bold uppercase tracking-tighter rounded-lg hover:bg-stone-800 transition-colors inline-block">
+          <a href="/brands" class="bg-primary text-on-primary px-8 py-4 font-headline font-bold uppercase tracking-tighter rounded-lg hover:bg-stone-800 transition-colors inline-block" aria-label="Explore our shoe collections">
               Explore Collections
           </a>
         </div>
@@ -81,7 +81,7 @@ const localBusinessSchema = {
     <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-auto md:h-[800px]">
       <!-- Large Focus Card -->
       <div class="md:col-span-2 md:row-span-2 bg-surface-container-low relative group overflow-hidden">
-        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Neighborhood energy" src="/neighborhood_energy.jpg"/>
+        <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Neighborhood energy" src="/neighborhood_energy.jpg"/>
         <div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors"></div>
         <div class="absolute bottom-0 left-0 p-8 text-white z-10">
           <span class="bg-primary px-3 py-1 font-label text-xs uppercase mb-2 inline-block">The Foundation</span>
@@ -92,7 +92,7 @@ const localBusinessSchema = {
       <!-- Kids Segment -->
       <div class="md:col-span-2 bg-secondary-container p-8 flex flex-col justify-between relative overflow-hidden group">
         <!-- Hover Image -->
-        <img src="/hover_kids.png" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Kid trying shoes" />
+        <img loading="lazy" decoding="async" src="/hover_kids.png" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Kid trying shoes" />
         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
         <!-- Content -->
         <div class="z-10 relative">
@@ -100,7 +100,7 @@ const localBusinessSchema = {
           <p class="font-body text-on-secondary-container group-hover:text-stone-200 transition-colors duration-500 max-w-xs">Durable, vibrant footwear for the smallest members of our neighborhood.</p>
         </div>
         <div class="flex justify-end z-10 relative">
-          <span class="material-symbols-outlined text-6xl text-on-secondary-container opacity-30 group-hover:text-white group-hover:opacity-80 transition-all duration-500">child_care</span>
+          <span class="material-symbols-outlined text-6xl text-on-secondary-container opacity-30 group-hover:text-white group-hover:opacity-80 transition-all duration-500" aria-hidden="true">child_care</span>
         </div>
         <div class="absolute -right-8 -bottom-8 w-48 h-48 bg-primary/10 rounded-full blur-3xl z-0 group-hover:opacity-0 transition-opacity duration-500"></div>
       </div>
@@ -108,22 +108,22 @@ const localBusinessSchema = {
       <!-- Senior Comfort -->
       <div class="bg-surface-container-highest p-8 flex flex-col justify-between group transition-colors relative overflow-hidden">
         <!-- Hover Image -->
-        <img src="/hover_senior.png" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Senior comfort" />
+        <img loading="lazy" decoding="async" src="/hover_senior.png" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Senior comfort" />
         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
         <!-- Content -->
         <div class="z-10 relative">
-          <span class="material-symbols-outlined text-4xl mb-4 group-hover:text-white transition-colors duration-500">nordic_walking</span>
+          <span class="material-symbols-outlined text-4xl mb-4 group-hover:text-white transition-colors duration-500" aria-hidden="true">nordic_walking</span>
           <h3 class="font-headline text-xl font-bold uppercase group-hover:text-white transition-colors duration-500">Golden Years Comfort</h3>
         </div>
-        <a href="/services" class="font-label text-sm uppercase font-bold text-on-surface group-hover:text-white transition-colors duration-500 flex items-center gap-2 z-10 relative">
-            View Orthotics <span class="material-symbols-outlined text-xs">arrow_forward</span>
+        <a href="/services" class="font-label text-sm uppercase font-bold text-on-surface group-hover:text-white transition-colors duration-500 flex items-center gap-2 z-10 relative" aria-label="View our senior and orthotic offerings">
+            View Orthotics <span class="material-symbols-outlined text-xs" aria-hidden="true">arrow_forward</span>
         </a>
       </div>
       
       <!-- Community Event -->
       <div class="bg-primary-container p-8 flex flex-col justify-between relative overflow-hidden group">
         <!-- Hover Image -->
-        <img src="/hover_discount.png" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Local business discount" />
+        <img loading="lazy" decoding="async" src="/hover_discount.png" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Local business discount" />
         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
         <!-- Content -->
         <div class="font-headline text-on-primary-container group-hover:text-white transition-colors duration-500 z-10 relative">
@@ -150,7 +150,7 @@ const localBusinessSchema = {
         </div>
       </div>
       <div class="w-full md:w-2/5 aspect-[4/5] bg-surface-container-low rounded-lg -rotate-1 shadow-2xl relative z-10 overflow-hidden">
-        <img class="w-full h-full object-cover" alt="Professional shoe fitting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3CvT3vDk74EJ_3NIleF7ltjUwfuX9R0GDH1sNF6qppdkj4ZvovLrBAwt10JuSqroQv1qvIx-5Z1NieEv2czodAEbsAV2xC6xhF5h37O86qCe_dHEAodprGR5H5i9ZltYbRn4cuAfIQhcJpru4USh4tKSGOTTFJ96MiufGWRb-czDPZifpuDCwrWo6QU8Xa5Fs5cNIP7DZx9Vc6iWJXJ1ScyA2jHRc_MchaEkEEKqMAZ-NOozM1-XZ94hnDSDjwQT_XefZa69d4A"/>
+        <img loading="lazy" decoding="async" class="w-full h-full object-cover" alt="Professional shoe fitting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3CvT3vDk74EJ_3NIleF7ltjUwfuX9R0GDH1sNF6qppdkj4ZvovLrBAwt10JuSqroQv1qvIx-5Z1NieEv2czodAEbsAV2xC6xhF5h37O86qCe_dHEAodprGR5H5i9ZltYbRn4cuAfIQhcJpru4USh4tKSGOTTFJ96MiufGWRb-czDPZifpuDCwrWo6QU8Xa5Fs5cNIP7DZx9Vc6iWJXJ1ScyA2jHRc_MchaEkEEKqMAZ-NOozM1-XZ94hnDSDjwQT_XefZa69d4A"/>
       </div>
       <!-- Decorative element -->
       <div class="absolute top-0 right-0 w-96 h-96 bg-primary opacity-10 blur-[120px] -mr-48 -mt-48"></div>

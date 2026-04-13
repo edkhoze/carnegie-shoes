@@ -43,6 +43,16 @@ When you intentionally modify the visual look and feel of the site (e.g. changin
 npm run test:e2e -- --update-snapshots
 ```
 
+## 🔐 Environment Variables
+
+Before running the application or integrating services like the contact form, set up your local environment:
+1. Copy `.env.example` to a new file named `.env`.
+2. Fill in the required values:
+   - `RESEND_API_KEY`: API key for email delivery via Resend.
+   - `TO_EMAIL`: The destination email address for contact form submissions.
+   - `TURNSTILE_SECRET_KEY`: Cloudflare Turnstile secret key for bot protection validation.
+   - `PUBLIC_TURNSTILE_SITE_KEY`: Public site key used on the frontend contact form.
+
 ## 🧞 Build & Deploy
 
 This project is built using Astro and deployed via **Cloudflare Pages**.

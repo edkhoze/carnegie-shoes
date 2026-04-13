@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import CallToAction from '../components/CallToAction.astro';
 ---
 
 <Layout title="Services | Carnegie Shoes" description="Experience our precision shoe fitting and orthotics assessment services at Carnegie Shoes. We help babies, adults, and seniors walk in comfort.">
@@ -23,7 +24,7 @@ import Layout from '../layouts/Layout.astro';
       <!-- Aged Care Package Card (Large, Asymmetric) -->
       <div class="col-span-12 md:col-span-7 bg-surface-container-low p-1 relative overflow-hidden group">
         <div class="relative h-full bg-surface-container-lowest p-8 md:p-12 flex flex-col justify-end min-h-[500px]">
-          <img alt="Professional care" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA1COzfCxYs5SAUKcLF8hToEfVNXJGeucisJ5N3DNbnCcgIui96JXMmAMgtBN5AtlzTRqLUanopLWNwRrPSrHS3YDhuq3wcqgfgPo7pA53YSN-uLsm0mA66VFd_BDPZKVHVpvC8QbmWwDACJUbGqEn_t319gj5yann4j1d9Vy7lGDRaONy_W-XcZ50HG7RoXTnTXQHYT7CaShOglYBBTj7gg0nx890jeyqJsNEfFbp70W8u5p735E4zw05esShPHuxVY5s2If90Q"/>
+          <img fetchpriority="high" decoding="async" alt="Professional care" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA1COzfCxYs5SAUKcLF8hToEfVNXJGeucisJ5N3DNbnCcgIui96JXMmAMgtBN5AtlzTRqLUanopLWNwRrPSrHS3YDhuq3wcqgfgPo7pA53YSN-uLsm0mA66VFd_BDPZKVHVpvC8QbmWwDACJUbGqEn_t319gj5yann4j1d9Vy7lGDRaONy_W-XcZ50HG7RoXTnTXQHYT7CaShOglYBBTj7gg0nx890jeyqJsNEfFbp70W8u5p735E4zw05esShPHuxVY5s2If90Q"/>
           <div class="relative z-10">
             <span class="inline-block bg-primary px-4 py-1 text-on-primary font-label text-sm mb-6">GOVERNMENT SUPPORTED</span>
             <h2 class="font-headline text-4xl md:text-6xl font-black uppercase tracking-tighter text-on-surface leading-none mb-6">
@@ -32,8 +33,8 @@ import Layout from '../layouts/Layout.astro';
             <p class="max-w-md text-lg text-on-surface-variant mb-8">
                 Navigating HCP and NDIS can be complex. We simplify the process to ensure you get the support you deserve.
             </p>
-            <button class="flex items-center gap-2 font-label font-bold text-primary group-hover:gap-4 transition-all">
-                LEARN MORE <span class="material-symbols-outlined">arrow_forward</span>
+            <button class="flex items-center gap-2 font-label font-bold text-primary group-hover:gap-4 transition-all" aria-label="Learn more about government supported aged care packages">
+                LEARN MORE <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
             </button>
           </div>
         </div>
@@ -42,7 +43,7 @@ import Layout from '../layouts/Layout.astro';
       <!-- Shoe Fitters Card (Smaller, Bold Color) -->
       <div class="col-span-12 md:col-span-5 bg-secondary-container p-12 flex flex-col justify-between">
         <div class="mb-12">
-          <span class="material-symbols-outlined text-6xl text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">straighten</span>
+          <span class="material-symbols-outlined text-6xl text-on-secondary-container" aria-hidden="true" style="font-variation-settings: 'FILL' 1;">straighten</span>
         </div>
         <div>
           <h3 class="font-headline text-4xl font-bold uppercase tracking-tighter text-on-secondary-container leading-none mb-4">
@@ -61,15 +62,15 @@ import Layout from '../layouts/Layout.astro';
         </h3>
         <ul class="space-y-4 font-body">
           <li class="flex items-start gap-3">
-            <span class="material-symbols-outlined text-tertiary-container">check_circle</span>
+            <span class="material-symbols-outlined text-tertiary-container" aria-hidden="true">check_circle</span>
             <span>Orthotic-friendly designs</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="material-symbols-outlined text-tertiary-container">check_circle</span>
+            <span class="material-symbols-outlined text-tertiary-container" aria-hidden="true">check_circle</span>
             <span>Customized arch support fitting</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="material-symbols-outlined text-tertiary-container">check_circle</span>
+            <span class="material-symbols-outlined text-tertiary-container" aria-hidden="true">check_circle</span>
             <span>Post-surgery recovery footwear</span>
           </li>
         </ul>
@@ -86,10 +87,10 @@ import Layout from '../layouts/Layout.astro';
           </div>
           <div class="flex gap-4">
             <div class="bg-white p-2 shadow-lg -rotate-3">
-              <img alt="Community event" class="w-32 h-32 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGxd71qQPCVGAjmExrJC8VIH7WAQGyNwgt_vhymThKkucPzshNbkmrS4dNxeUWrzELhR_19DoPB13oMnP6-PoC7p8XF1RVFNSxpAty1-_wLvUCWb_tMI4a_OuInp34nKD9TvmTwlzq7yzlKFYAQrrIu9qp_LykZkKAt6W8vUcjJGNxrkNRfNpCTBG3VQUfJS8pc44iA76mJUdJkyjXEHWtdIewmAb8EAE0GdTzRBk8EzrsQOrJ3GwqaPN1sZD44kj-CRySTViSOQ"/>
+              <img loading="lazy" decoding="async" alt="Community event" class="w-32 h-32 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGxd71qQPCVGAjmExrJC8VIH7WAQGyNwgt_vhymThKkucPzshNbkmrS4dNxeUWrzELhR_19DoPB13oMnP6-PoC7p8XF1RVFNSxpAty1-_wLvUCWb_tMI4a_OuInp34nKD9TvmTwlzq7yzlKFYAQrrIu9qp_LykZkKAt6W8vUcjJGNxrkNRfNpCTBG3VQUfJS8pc44iA76mJUdJkyjXEHWtdIewmAb8EAE0GdTzRBk8EzrsQOrJ3GwqaPN1sZD44kj-CRySTViSOQ"/>
             </div>
             <div class="bg-white p-2 shadow-lg rotate-6 mt-4">
-              <img alt="Community connection" class="w-32 h-32 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbkD_0roZ5_Cw3c0e_W_oj4v0yEh0WJx8zOd3ty7DnvIY-FUvMvR9bXdWpUGCIArqumo62Z-9MrcAlqMWnUxh9jprlDXBEffPKMRZsmNEPw9QOMo4MYGlDTMNQ3cBcDqvHWGP7xR02Yq95ELICH8Xk8B6P_uzxR8OWqqDF9SQF7iC7vdspxy-7BAlYXqv-gxeEiL8vfeU2c98gvW2wop0v8VEhPPwe7JfWlruct5FmbZ41LIirNYjcMtaMNnbVyGc8l8cAbkKbWA"/>
+              <img loading="lazy" decoding="async" alt="Community connection" class="w-32 h-32 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbkD_0roZ5_Cw3c0e_W_oj4v0yEh0WJx8zOd3ty7DnvIY-FUvMvR9bXdWpUGCIArqumo62Z-9MrcAlqMWnUxh9jprlDXBEffPKMRZsmNEPw9QOMo4MYGlDTMNQ3cBcDqvHWGP7xR02Yq95ELICH8Xk8B6P_uzxR8OWqqDF9SQF7iC7vdspxy-7BAlYXqv-gxeEiL8vfeU2c98gvW2wop0v8VEhPPwe7JfWlruct5FmbZ41LIirNYjcMtaMNnbVyGc8l8cAbkKbWA"/>
             </div>
           </div>
         </div>
@@ -98,28 +99,5 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="mt-32 px-8 max-w-screen-xl mx-auto text-center mb-20">
-    <div class="bg-surface-container-low p-16 md:p-24 relative overflow-hidden">
-      <div class="relative z-10">
-        <h2 class="font-headline text-5xl md:text-7xl font-black uppercase tracking-tighter text-on-surface mb-8">
-            Ready for a <span class="text-primary">Better Fit?</span>
-        </h2>
-        <p class="font-body text-xl text-on-surface-variant max-w-2xl mx-auto mb-12">
-            Visit our Carnegie showroom today for a personalized consultation with our expert staff.
-        </p>
-        <div class="flex flex-wrap justify-center gap-6">
-          <a href="/contact" class="bg-primary text-on-primary px-10 py-5 font-headline font-black uppercase tracking-tighter text-xl hover:bg-stone-800 transition-colors shadow-lg inline-block">
-              Book a Fitting
-          </a>
-          <a href="/brands" class="bg-on-surface text-surface px-10 py-5 font-headline font-black uppercase tracking-tighter text-xl hover:opacity-90 transition-all inline-block">
-              View Collections
-          </a>
-        </div>
-      </div>
-      <!-- Abstract geometric shapes for the "Mosaic" feel -->
-      <div class="absolute top-0 left-0 w-32 h-32 bg-secondary opacity-20 -translate-x-1/2 -translate-y-1/2 rounded-full"></div>
-      <div class="absolute bottom-0 right-0 w-64 h-64 bg-tertiary opacity-10 translate-x-1/4 translate-y-1/4 rotate-45"></div>
-    </div>
-  </section>
+  <CallToAction />
 </Layout>

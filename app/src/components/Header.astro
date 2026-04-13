@@ -1,0 +1,32 @@
+---
+const currentPath = Astro.url.pathname;
+const navLinks = [
+  { text: 'Home', url: '/' },
+  { text: 'Brands we sell', url: '/brands' },
+  { text: 'Our Services', url: '/services' },
+  { text: 'Contact Us', url: '/contact' }
+];
+
+const getLinkClasses = (url: string) => {
+  const isCurrent = currentPath === url || (currentPath === '/' && url === '/') || (currentPath.startsWith(url) && url !== '/');
+  if (isCurrent) {
+    return "font-headline tracking-tighter font-bold uppercase text-primary border-b-4 border-primary pb-1";
+  }
+  return "font-headline tracking-tighter font-bold uppercase text-on-background hover:text-primary transition-colors";
+};
+---
+
+<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-outline-variant/30">
+  <div class="flex justify-between items-center px-8 py-6 w-full max-w-screen-2xl mx-auto">
+    <a href="/" class="text-3xl font-black text-primary tracking-tighter font-headline hover:text-secondary transition-colors" aria-label="Go to Carnegie Shoes homepage">
+      Carnegie Shoes
+    </a>
+    <div class="hidden md:flex gap-8 items-center">
+      {navLinks.map(link => (
+        <a href={link.url} class={getLinkClasses(link.url)}>
+          {link.text}
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>

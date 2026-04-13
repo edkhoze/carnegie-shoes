@@ -1,4 +1,6 @@
 ---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -16,21 +18,6 @@ const {
 const currentPath = Astro.url.pathname;
 const siteUrl = "https://carnegieshoes.com.au";
 const canonicalURL = new URL(currentPath, siteUrl).href;
-
-const navLinks = [
-  { text: 'Home', url: '/' },
-  { text: 'Brands we sell', url: '/brands' },
-  { text: 'Our Services', url: '/services' },
-  { text: 'Contact Us', url: '/contact' }
-];
-
-const getLinkClasses = (url: string) => {
-  const isCurrent = currentPath === url || (currentPath === '/' && url === '/') || (currentPath.startsWith(url) && url !== '/');
-  if (isCurrent) {
-    return "font-headline tracking-tighter font-bold uppercase text-primary border-b-4 border-primary pb-1";
-  }
-  return "font-headline tracking-tighter font-bold uppercase text-on-background hover:text-primary transition-colors";
-};
 ---
 
 <!doctype html>
@@ -65,73 +52,12 @@ const getLinkClasses = (url: string) => {
     <title>{title}</title>
   </head>
   <body>
-    <!-- TopNavBar -->
-    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-outline-variant/30">
-      <div class="flex justify-between items-center px-8 py-6 w-full max-w-screen-2xl mx-auto">
-        <a href="/" class="text-3xl font-black text-primary tracking-tighter font-headline hover:text-secondary transition-colors">
-          Carnegie Shoes
-        </a>
-        <div class="hidden md:flex gap-8 items-center">
-          {navLinks.map(link => (
-            <a href={link.url} class={getLinkClasses(link.url)}>
-              {link.text}
-            </a>
-          ))}
-        </div>
-      </div>
-    </nav>
+    <Header />
 
     <div class="pt-32">
       <slot />
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-stone-100 dark:bg-stone-900 border-t border-outline-variant/30">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 w-full max-w-screen-2xl mx-auto">
-        <div class="space-y-6">
-          <div class="text-xl font-bold text-secondary font-label uppercase tracking-widest">Carnegie Shoes</div>
-          <p class="font-body text-sm text-stone-500 uppercase tracking-widest leading-relaxed">Serving Carnegie<br>community since 2014</p>
-          <div class="space-y-4 pt-4">
-            <div class="flex gap-3 text-stone-500 font-body text-sm uppercase tracking-widest">
-              <span class="material-symbols-outlined text-lg">call</span>
-              <a href="tel:0395691526" class="hover:text-primary transition-colors">(03) 9569 1526</a>
-            </div>
-            <div class="flex gap-3 text-stone-500 font-body text-sm uppercase tracking-widest">
-              <span class="material-symbols-outlined text-lg">mail</span>
-              <a href="mailto:hello@carnegieshoes.com.au" class="hover:text-primary transition-colors">hello@carnegieshoes.com.au</a>
-            </div>
-          </div>
-        </div>
-        
-        <div>
-          <h4 class="font-label text-sm uppercase tracking-widest text-tertiary font-bold mb-8">Links</h4>
-          <ul class="space-y-4 font-label text-sm uppercase tracking-widest">
-            {navLinks.map(link => (
-              <li>
-                <a href={link.url} class="text-stone-500 hover:text-primary hover:translate-x-1 transition-transform inline-block">
-                  {link.text}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="font-label text-sm uppercase tracking-widest text-tertiary font-bold mb-8">Location</h4>
-          <div class="text-stone-500 uppercase tracking-widest font-label text-sm leading-loose">
-            <a href="https://share.google/pzjMnGaVlVBXVhT6j" target="_blank" rel="noopener noreferrer" class="hover:text-primary transition-colors">148 Koornang Road,<br />Carnegie 3163</a>
-          </div>
-        </div>
-        
-        <div>
-          <h4 class="font-label text-sm uppercase tracking-widest text-tertiary font-bold mb-8">Opening Hours</h4>
-          <ul class="space-y-4 font-label text-sm tracking-widest uppercase text-stone-500 leading-loose">
-            <li>Tuesday - Friday: 10 am - 5 pm</li>
-            <li>Saturday - Sunday: 10 am - 4 pm</li>
-            <li>Monday: Closed</li>
-          </ul>
-        </div>
-      </div>
-    </footer>
+    <Footer />
   </body>
 </html>

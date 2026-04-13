@@ -25,23 +25,23 @@ import Layout from '../layouts/Layout.astro';
     
     <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
       <div class="md:col-span-4 h-[500px]">
-        <img class="w-full h-full object-cover rounded-xl shadow-2xl" alt="Vibrant sneakers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjf_pzbmcSbgNJmF_CJILMccer_eFhh9lsIQk7Pq5xV1n5CsU46bdAWre_947L5ELQuccbz6s8R8ApGTyFAjbvbB4vwcPmGRVJgAJedlF8DoaaA8tOOhWPXLzMIXCM9Es4Kj-E3JBhtna9ER4LFV5GkUE0a1bFHL0jckos4vJOfdu1QKmaMEP79mcqFqmHoZchuoLWDC1qwCuSze9FGVfTD0eI5asjhy2q_38j4wjkhlAcAA0YAU0WQ1xfvHE_bQRxd8rin_bxcQ"/>
+        <img loading="lazy" decoding="async" class="w-full h-full object-cover rounded-xl shadow-2xl" alt="Vibrant sneakers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjf_pzbmcSbgNJmF_CJILMccer_eFhh9lsIQk7Pq5xV1n5CsU46bdAWre_947L5ELQuccbz6s8R8ApGTyFAjbvbB4vwcPmGRVJgAJedlF8DoaaA8tOOhWPXLzMIXCM9Es4Kj-E3JBhtna9ER4LFV5GkUE0a1bFHL0jckos4vJOfdu1QKmaMEP79mcqFqmHoZchuoLWDC1qwCuSze9FGVfTD0eI5asjhy2q_38j4wjkhlAcAA0YAU0WQ1xfvHE_bQRxd8rin_bxcQ"/>
       </div>
       <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
         <div class="bg-primary text-on-primary p-8 rounded-xl flex flex-col justify-between group hover:scale-[1.02] transition-transform cursor-pointer">
           <div class="font-headline text-4xl font-black tracking-tighter">MERRELL</div>
           <p class="font-label text-xs uppercase tracking-widest mt-4 opacity-80">Rugged Outdoor Tech</p>
-          <span class="material-symbols-outlined self-end text-3xl mt-8">arrow_outward</span>
+          <span class="material-symbols-outlined self-end text-3xl mt-8" aria-hidden="true">arrow_outward</span>
         </div>
         <div class="bg-surface-variant p-8 rounded-xl flex flex-col justify-between group hover:scale-[1.02] transition-transform cursor-pointer">
           <div class="font-headline text-4xl font-black tracking-tighter text-on-background">SKECHERS</div>
           <p class="font-label text-xs uppercase tracking-widest mt-4 text-on-surface-variant">Daily Athletic Comfort</p>
-          <span class="material-symbols-outlined self-end text-3xl mt-8 text-primary">arrow_outward</span>
+          <span class="material-symbols-outlined self-end text-3xl mt-8 text-primary" aria-hidden="true">arrow_outward</span>
         </div>
         <div class="bg-tertiary text-on-tertiary p-8 rounded-xl flex flex-col justify-between group hover:scale-[1.02] transition-transform cursor-pointer">
           <div class="font-headline text-4xl font-black tracking-tighter">SAUCONY</div>
           <p class="font-label text-xs uppercase tracking-widest mt-4 opacity-80">Elite Running Power</p>
-          <span class="material-symbols-outlined self-end text-3xl mt-8">arrow_outward</span>
+          <span class="material-symbols-outlined self-end text-3xl mt-8" aria-hidden="true">arrow_outward</span>
         </div>
       </div>
     </div>
@@ -64,7 +64,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="font-headline text-6xl font-black tracking-tighter mb-4">ARA</div>
             <p class="font-body text-on-surface-variant">German precision meet contemporary fashion. High-soft technology in every step.</p>
           </div>
-          <img class="w-48 h-48 object-contain absolute -right-4 -bottom-4 opacity-20 group-hover:opacity-100 group-hover:-translate-y-4 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfnYQwExGq84PUcKWXXndlIXHyqnerNoE1WAZJoAqSyQyr16aktm-VdHVCCj6gwaafho177bUjhIxv0oHvgbzAx7oq8v6AiVl5tfmJmwvSXHPbMNpKa6WrwTBHsPJQaO1YiPZ3JD6PCpY3xZi33NGqqdrLQAyqx4FMyQEyG6q5qFMRE1nQW73fIQ0BT3TrCX667kev8mC3XPU_eUBciZiXgkzp7wVhDTM4hWjYEuSTSqP3fEgJ2p598FSoMAzXjhFedRxM3Q3r6g"/>
+          <img loading="lazy" decoding="async" class="w-48 h-48 object-contain absolute -right-4 -bottom-4 opacity-20 group-hover:opacity-100 group-hover:-translate-y-4 transition-all duration-500" alt="Ara branding" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfnYQwExGq84PUcKWXXndlIXHyqnerNoE1WAZJoAqSyQyr16aktm-VdHVCCj6gwaafho177bUjhIxv0oHvgbzAx7oq8v6AiVl5tfmJmwvSXHPbMNpKa6WrwTBHsPJQaO1YiPZ3JD6PCpY3xZi33NGqqdrLQAyqx4FMyQEyG6q5qFMRE1nQW73fIQ0BT3TrCX667kev8mC3XPU_eUBciZiXgkzp7wVhDTM4hWjYEuSTSqP3fEgJ2p598FSoMAzXjhFedRxM3Q3r6g"/>
         </div>
         <div class="grid grid-cols-2 gap-4 md:col-span-2">
           <div class="bg-secondary p-8 rounded-xl flex flex-col justify-center text-center hover:bg-primary transition-colors cursor-pointer text-white">
@@ -115,7 +115,7 @@ import Layout from '../layouts/Layout.astro';
     
     <div class="grid md:grid-cols-2 gap-8 mb-16">
       <div class="relative group overflow-hidden rounded-2xl">
-        <img class="w-full h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Leather boots" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmiV7xkCUezzZMTYLetKjz5wrjv-rC9MqHlzsPQZE__Q7cmxM_CXryIK7Wr3GlpjL0J03_I6bnd739ATLkgsBp_ozIn9YjLFFBWNCI6GPvqWHwRaY7vR85HvpVPVaHn7LFAjY3TtXix2h5b84mlwt3aPOCYSOwnhNW9qvnH4CPiHx_F1x8T-v4V1Rh_ZwJfLsKKK7xNsR9_us1UQF9SAaCia4HUivajbr_SwWohhbgYdnU5WwKq0af5Lorn6TAxm5dRdHY5uPKxA"/>
+        <img loading="lazy" decoding="async" class="w-full h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Leather boots" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmiV7xkCUezzZMTYLetKjz5wrjv-rC9MqHlzsPQZE__Q7cmxM_CXryIK7Wr3GlpjL0J03_I6bnd739ATLkgsBp_ozIn9YjLFFBWNCI6GPvqWHwRaY7vR85HvpVPVaHn7LFAjY3TtXix2h5b84mlwt3aPOCYSOwnhNW9qvnH4CPiHx_F1x8T-v4V1Rh_ZwJfLsKKK7xNsR9_us1UQF9SAaCia4HUivajbr_SwWohhbgYdnU5WwKq0af5Lorn6TAxm5dRdHY5uPKxA"/>
         <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
         <div class="absolute bottom-12 left-12 right-12">
           <div class="inline-block bg-white text-primary px-3 py-1 font-label text-[10px] uppercase font-bold tracking-widest mb-4">The Iconic Standard</div>
