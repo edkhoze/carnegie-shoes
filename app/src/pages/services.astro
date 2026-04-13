@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Services | Carnegie Shoes">
+  <!-- Hero Section: Expressive Collage Header -->
+  <section class="px-8 max-w-screen-2xl mx-auto mb-24 pb-20">
+    <div class="relative">
+      <div class="font-headline text-[clamp(3rem,12vw,8rem)] leading-[0.85] font-black uppercase tracking-tighter mb-4 text-primary">
+          Every Step <br/>
+          <span class="-webkit-text-stroke-[1px] -webkit-text-stroke-primary text-transparent">Matters.</span>
+      </div>
+      <div class="absolute top-0 right-0 hidden lg:block w-1/3 bg-tertiary-container p-8 -rotate-2 shadow-xl z-10">
+        <p class="font-label text-on-tertiary-container text-lg tracking-widest font-bold">CARNEGIE SPECIALIZED CARE</p>
+        <p class="text-on-tertiary-container mt-2">Personalized solutions for a vibrant, mobile community.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kinetic Mosaic Content Section -->
+  <section class="px-8 max-w-screen-2xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+      <!-- Aged Care Package Card (Large, Asymmetric) -->
+      <div class="col-span-12 md:col-span-7 bg-surface-container-low p-1 relative overflow-hidden group">
+        <div class="relative h-full bg-surface-container-lowest p-8 md:p-12 flex flex-col justify-end min-h-[500px]">
+          <img alt="Professional care" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBA1COzfCxYs5SAUKcLF8hToEfVNXJGeucisJ5N3DNbnCcgIui96JXMmAMgtBN5AtlzTRqLUanopLWNwRrPSrHS3YDhuq3wcqgfgPo7pA53YSN-uLsm0mA66VFd_BDPZKVHVpvC8QbmWwDACJUbGqEn_t319gj5yann4j1d9Vy7lGDRaONy_W-XcZ50HG7RoXTnTXQHYT7CaShOglYBBTj7gg0nx890jeyqJsNEfFbp70W8u5p735E4zw05esShPHuxVY5s2If90Q"/>
+          <div class="relative z-10">
+            <span class="inline-block bg-primary px-4 py-1 text-on-primary font-label text-sm mb-6">GOVERNMENT SUPPORTED</span>
+            <h2 class="font-headline text-4xl md:text-6xl font-black uppercase tracking-tighter text-on-surface leading-none mb-6">
+                We work with <br/>aged care package providers.
+            </h2>
+            <p class="max-w-md text-lg text-on-surface-variant mb-8">
+                Navigating HCP and NDIS can be complex. We simplify the process to ensure you get the support you deserve.
+            </p>
+            <button class="flex items-center gap-2 font-label font-bold text-primary group-hover:gap-4 transition-all">
+                LEARN MORE <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Shoe Fitters Card (Smaller, Bold Color) -->
+      <div class="col-span-12 md:col-span-5 bg-secondary-container p-12 flex flex-col justify-between">
+        <div class="mb-12">
+          <span class="material-symbols-outlined text-6xl text-on-secondary-container" style="font-variation-settings: 'FILL' 1;">straighten</span>
+        </div>
+        <div>
+          <h3 class="font-headline text-4xl font-bold uppercase tracking-tighter text-on-secondary-container leading-none mb-4">
+              Experienced <br/>shoe fitters.
+          </h3>
+          <p class="text-on-secondary-container/80 font-medium">
+              Our master fitters understand the unique anatomy of the foot. We don't just sell shoes; we measure for a lifetime of comfort.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Podiatrist Recommendations (Horizontal overlap) -->
+      <div class="col-span-12 md:col-span-5 md:-mt-12 z-20 bg-tertiary p-12 text-on-tertiary">
+        <h3 class="font-headline text-4xl font-bold uppercase tracking-tighter leading-none mb-6">
+            Podiatrist <br/>recommendations.
+        </h3>
+        <ul class="space-y-4 font-body">
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-tertiary-container">check_circle</span>
+            <span>Orthotic-friendly designs</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-tertiary-container">check_circle</span>
+            <span>Customized arch support fitting</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-symbols-outlined text-tertiary-container">check_circle</span>
+            <span>Post-surgery recovery footwear</span>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Multi-cultural Community (Image Heavy Collage) -->
+      <div class="col-span-12 md:col-span-7 bg-surface-container-high overflow-hidden relative group">
+        <div class="p-12 relative z-10 flex flex-col h-full justify-between min-h-[400px]">
+          <div>
+            <span class="font-label text-sm uppercase tracking-widest text-primary font-bold">Local Spirit</span>
+            <h3 class="font-headline text-5xl font-black uppercase tracking-tighter text-on-surface-variant mt-2">
+                Multi-cultural <br/>community.
+            </h3>
+          </div>
+          <div class="flex gap-4">
+            <div class="bg-white p-2 shadow-lg -rotate-3">
+              <img alt="Community event" class="w-32 h-32 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGxd71qQPCVGAjmExrJC8VIH7WAQGyNwgt_vhymThKkucPzshNbkmrS4dNxeUWrzELhR_19DoPB13oMnP6-PoC7p8XF1RVFNSxpAty1-_wLvUCWb_tMI4a_OuInp34nKD9TvmTwlzq7yzlKFYAQrrIu9qp_LykZkKAt6W8vUcjJGNxrkNRfNpCTBG3VQUfJS8pc44iA76mJUdJkyjXEHWtdIewmAb8EAE0GdTzRBk8EzrsQOrJ3GwqaPN1sZD44kj-CRySTViSOQ"/>
+            </div>
+            <div class="bg-white p-2 shadow-lg rotate-6 mt-4">
+              <img alt="Community connection" class="w-32 h-32 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbkD_0roZ5_Cw3c0e_W_oj4v0yEh0WJx8zOd3ty7DnvIY-FUvMvR9bXdWpUGCIArqumo62Z-9MrcAlqMWnUxh9jprlDXBEffPKMRZsmNEPw9QOMo4MYGlDTMNQ3cBcDqvHWGP7xR02Yq95ELICH8Xk8B6P_uzxR8OWqqDF9SQF7iC7vdspxy-7BAlYXqv-gxeEiL8vfeU2c98gvW2wop0v8VEhPPwe7JfWlruct5FmbZ41LIirNYjcMtaMNnbVyGc8l8cAbkKbWA"/>
+            </div>
+          </div>
+        </div>
+        <div class="absolute right-0 top-0 w-1/2 h-full bg-primary/10 -skew-x-12 translate-x-1/2"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="mt-32 px-8 max-w-screen-xl mx-auto text-center mb-20">
+    <div class="bg-surface-container-low p-16 md:p-24 relative overflow-hidden">
+      <div class="relative z-10">
+        <h2 class="font-headline text-5xl md:text-7xl font-black uppercase tracking-tighter text-on-surface mb-8">
+            Ready for a <span class="text-primary">Better Fit?</span>
+        </h2>
+        <p class="font-body text-xl text-on-surface-variant max-w-2xl mx-auto mb-12">
+            Visit our Carnegie showroom today for a personalized consultation with our expert staff.
+        </p>
+        <div class="flex flex-wrap justify-center gap-6">
+          <a href="/contact" class="bg-primary text-on-primary px-10 py-5 font-headline font-black uppercase tracking-tighter text-xl hover:bg-stone-800 transition-colors shadow-lg inline-block">
+              Book a Fitting
+          </a>
+          <a href="/brands" class="bg-on-surface text-surface px-10 py-5 font-headline font-black uppercase tracking-tighter text-xl hover:opacity-90 transition-all inline-block">
+              View Collections
+          </a>
+        </div>
+      </div>
+      <!-- Abstract geometric shapes for the "Mosaic" feel -->
+      <div class="absolute top-0 left-0 w-32 h-32 bg-secondary opacity-20 -translate-x-1/2 -translate-y-1/2 rounded-full"></div>
+      <div class="absolute bottom-0 right-0 w-64 h-64 bg-tertiary opacity-10 translate-x-1/4 translate-y-1/4 rotate-45"></div>
+    </div>
+  </section>
+</Layout>

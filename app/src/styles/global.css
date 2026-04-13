@@ -1,0 +1,63 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: #E2583E;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #ffdbd1;
+  --color-on-primary-container: #3b0900;
+  
+  --color-secondary: #785500;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #ffc965;
+  --color-on-secondary-container: #5f4200;
+  
+  --color-tertiary: #00656f;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #a1f2fe;
+  --color-on-tertiary-container: #005d65;
+  
+  --color-background: #f6f6f9;
+  --color-on-background: #2d2f31;
+  
+  --color-surface: #f6f6f9;
+  --color-on-surface: #2d2f31;
+  
+  --color-surface-variant: #dbdde0;
+  --color-on-surface-variant: #5a5c5e;
+  
+  --color-surface-container-low: #f0f0f3;
+  --color-surface-container: #e7e8eb;
+  --color-surface-container-high: #e1e2e6;
+  --color-surface-container-highest: #dbdde0;
+  
+  --color-outline: #757779;
+  --color-outline-variant: #acadaf;
+
+  --font-headline: 'Epilogue', sans-serif;
+  --font-body: 'Manrope', sans-serif;
+  --font-label: 'Space Grotesk', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply font-body bg-background text-on-background selection:bg-primary-container selection:text-on-primary-container;
+  }
+}
+
+@layer utilities {
+  .kinetic-border {
+    border-left: 8px solid var(--color-primary);
+  }
+  .grid-mosaic {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .text-mosaic {
+    letter-spacing: -0.04em;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}

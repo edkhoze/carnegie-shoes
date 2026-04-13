@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Carnegie Shoes | The Kinetic Mosaic</title>
+<!-- Typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;900&amp;family=Manrope:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#5d0900",
+                    "on-background": "#2d2f31",
+                    "outline-variant": "#acadaf",
+                    "primary-fixed": "#ff775d",
+                    "on-tertiary-fixed-variant": "#006771",
+                    "secondary-dim": "#694a00",
+                    "on-tertiary-container": "#005d65",
+                    "inverse-primary": "#ff6d51",
+                    "tertiary-fixed": "#a1f2fe",
+                    "tertiary-container": "#a1f2fe",
+                    "surface-bright": "#f6f6f9",
+                    "on-secondary": "#fff1de",
+                    "outline": "#757779",
+                    "primary-container": "#ff775d",
+                    "background": "#f6f6f9",
+                    "on-primary": "#ffefec",
+                    "on-primary-fixed": "#000000",
+                    "on-surface-variant": "#5a5c5e",
+                    "secondary-fixed": "#ffc965",
+                    "on-surface": "#2d2f31",
+                    "secondary-container": "#ffc965",
+                    "on-secondary-fixed-variant": "#6b4b00",
+                    "inverse-surface": "#0c0e10",
+                    "on-error": "#ffefef",
+                    "tertiary-dim": "#005861",
+                    "on-tertiary": "#d4f9ff",
+                    "surface-container": "#e7e8eb",
+                    "on-error-container": "#510017",
+                    "tertiary-fixed-dim": "#93e4ef",
+                    "inverse-on-surface": "#9c9d9f",
+                    "error-container": "#f74b6d",
+                    "on-primary-container": "#4c0600",
+                    "surface-variant": "#dbdde0",
+                    "surface-container-high": "#e1e2e6",
+                    "surface-tint": "#a92f1a",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#feb700",
+                    "on-secondary-container": "#5f4200",
+                    "secondary": "#785500",
+                    "surface-container-highest": "#dbdde0",
+                    "error": "#b41340",
+                    "on-tertiary-fixed": "#004950",
+                    "tertiary": "#00656f",
+                    "surface-dim": "#d2d4d8",
+                    "surface-container-low": "#f0f0f3",
+                    "primary-dim": "#98230e",
+                    "surface": "#f6f6f9",
+                    "primary-fixed-dim": "#f5654a",
+                    "primary": "#a92f1a",
+                    "on-secondary-fixed": "#463000",
+                    "error-dim": "#a70138"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Epilogue"],
+                    "body": ["Manrope"],
+                    "label": ["Space Grotesk"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .text-mosaic {
+            letter-spacing: -0.04em;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Shell - Updated per COMPONENTS_19 -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-stone-950/80 backdrop-blur-md shadow-[0_48px_48px_-4px_rgba(0,0,0,0.06)]">
+<div class="flex justify-between items-center px-8 py-6 w-full max-w-screen-2xl mx-auto">
+<a class="text-3xl font-black text-[#a92f1a] dark:text-[#E2583E] tracking-tighter font-headline" href="#" style="">Carnegie Shoes</a>
+<div class="hidden md:flex gap-8 items-center font-headline tracking-tighter font-bold uppercase">
+<a class="text-[#a92f1a] border-b-4 border-[#a92f1a] pb-1" href="#" style="">Home</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#a92f1a] transition-colors" href="#" style="">Brands we sell</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#a92f1a] transition-colors" href="#" style="">Our Services</a>
+<a class="text-stone-600 dark:text-stone-400 hover:text-[#a92f1a] transition-colors" href="#" style="">Contact Us</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface cursor-pointer" style="">search</span>
+</div>
+</div>
+</nav>
+<!-- Hero Section: The Geometric Break -->
+<main class="pt-32 pb-20">
+<section class="relative max-w-screen-2xl mx-auto px-8 md:px-12 mb-32">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-0 relative">
+<!-- Large Display Image - Updated to Premium Ara/Rieker style -->
+<div class="md:col-span-8 h-[716px] relative overflow-hidden bg-surface-container-low">
+<img class="w-full h-full object-cover" data-alt="Close-up of a stylish Gabor blue rollingsoft sneaker, showcasing its modern design and vibrant blue accents, perfectly fitting the energetic neighborhood vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUatwWNRBqNHqNRk9MNUIKSVoxmYgVT391VU9FfVcByAlJsfUm6nXKnumi2XXd5bNI_vys0vg-H1qYznHViNIMfCJzDOWD9iOiF0XreVijVeo21F-7jUKA5FDyvD6WHpGzfYW1NgZagcq7l-IT_kFI2FBVf1xPdejFYrqhwndW1gBIP73E225Ncn2P8sh_rT0UyHzAg0wa1XLlZTZyqGJYtWyRROfkAsLQloCi6anqwS4CHIJqEj9crzVBTW2nnkCVOI_-1NvhSg" style=""/>
+<div class="absolute inset-0 bg-gradient-to-t from-tertiary-dim/20 to-transparent"></div>
+</div>
+<!-- Overlapping Text Block -->
+<div class="md:col-span-6 md:absolute md:right-0 md:bottom-[-4rem] bg-tertiary-container p-12 md:p-16 z-10 shadow-[48px_48px_48px_-4px_rgba(0,101,111,0.12)]">
+<span class="font-label text-on-tertiary-container uppercase tracking-widest text-sm mb-4 block" style="">Est. 1974 — Local &amp; Family Owned</span>
+<h1 class="font-headline text-5xl md:text-7xl font-black text-on-tertiary-container mb-6 leading-[0.9] text-mosaic" style="">
+                        STEP INTO THE <br/>KINETIC MOSAIC
+                    </h1>
+<p class="text-on-tertiary-container text-lg md:text-xl max-w-md font-medium leading-relaxed mb-8" style="">
+                        Carnegie Shoes is a small, well-established family business fitting and selling shoes for everyone from kids to seniors.
+                    </p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 font-headline font-bold uppercase tracking-tighter rounded-lg hover:bg-primary-dim transition-colors" style="">
+                            Explore Collections
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- The Neighborhood Vibe (Bento Grid) -->
+<section class="max-w-screen-2xl mx-auto px-8 md:px-12 mb-32">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div>
+<h2 class="font-headline text-4xl md:text-6xl font-black tracking-tighter uppercase text-primary" style="">Made for Movement</h2>
+<p class="font-label uppercase tracking-widest text-secondary mt-2" style="">The Carnegie neighborhood energy</p>
+</div>
+<div class="h-px flex-grow bg-surface-container hidden md:block mx-12 mb-4"></div>
+<div class="font-body text-on-surface-variant max-w-xs text-right" style="">
+                    From children's first steps to senior strolls, we weave quality into every corner of the community.
+                </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-auto md:h-[800px]">
+<!-- Large Focus Card -->
+<div class="md:col-span-2 md:row-span-2 bg-surface-container-low relative group overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Vibrant street scene outside Figjam Cafe and Carnegie storefronts, showcasing the local neighborhood energy." src="https://lh3.googleusercontent.com/aida/ADBb0ujRzPosvMvJsYq6zXyDCwJT5c0NzgzFfGARBfr0uUGrI0fRsoqhhV8jRmZ9PfxZoU7l2qvO5HKJZ5zzcD3Uxohtt6IHs3v-FPhIc9_QYvPKxMF_-OH4fu2Nmi6mr4bFCNqGxzG5A2lbnimzgqq8QmgWwoaK5wK2FOyDPw2pLQHQSbrJv_DqxUqfBrk9rPFsvd7C5f5pOalKZJyhC6DXtgKE_lqagGopEcErRllATx6lUBpUBM4ATIRVlL4yyIUt6s1Fnfv9qBI" style=""/>
+<div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors"></div>
+<div class="absolute bottom-0 left-0 p-8 text-white z-10">
+<span class="bg-primary px-3 py-1 font-label text-xs uppercase mb-2 inline-block" style="">The Foundation</span>
+<h3 class="font-headline text-3xl font-black uppercase leading-none" style="">Family Heritage</h3>
+</div>
+</div>
+<!-- Kids Segment -->
+<div class="md:col-span-2 bg-secondary-container p-8 flex flex-col justify-between relative overflow-hidden">
+<div class="z-10">
+<h3 class="font-headline text-4xl font-black text-on-secondary-container leading-none mb-4 uppercase" style="">Little <br/>Legends</h3>
+<p class="font-body text-on-secondary-container max-w-xs" style="">Durable, vibrant footwear for the smallest members of our neighborhood.</p>
+</div>
+<div class="flex justify-end z-10">
+<span class="material-symbols-outlined text-6xl text-on-secondary-container opacity-30" style="">child_care</span>
+</div>
+<div class="absolute -right-8 -bottom-8 w-48 h-48 bg-primary/10 rounded-full blur-3xl"></div>
+</div>
+<!-- Senior Comfort -->
+<div class="bg-surface-container-highest p-8 flex flex-col justify-between hover:bg-tertiary group transition-colors">
+<div>
+<span class="material-symbols-outlined text-4xl mb-4 group-hover:text-tertiary-container transition-colors" style="">nordic_walking</span>
+<h3 class="font-headline text-xl font-bold uppercase group-hover:text-white transition-colors" style="">Golden Years Comfort</h3>
+</div>
+<a class="font-label text-sm uppercase font-bold group-hover:text-tertiary-container transition-colors flex items-center gap-2" href="#" style="">
+                        View Orthotics <span class="material-symbols-outlined text-xs" style="">arrow_forward</span>
+</a>
+</div>
+<!-- Community Event -->
+<div class="bg-primary-container p-8 flex flex-col justify-between">
+<div class="font-headline text-on-primary-container">
+<div class="text-4xl font-black" style="">20%</div>
+<div class="text-lg font-bold uppercase leading-tight" style="">Local Business Discount</div>
+</div>
+<p class="font-body text-sm text-on-primary-container/80" style="">Support local, save local. Available for Carnegie residents.</p>
+</div>
+</div>
+</section>
+<!-- Personalized Fitting Section - Replaced Newsletter Section -->
+<section class="max-w-screen-2xl mx-auto px-8 md:px-12 mb-32">
+<div class="bg-on-background p-12 md:p-24 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="z-10 max-w-2xl">
+<h2 class="font-headline text-5xl md:text-6xl font-black text-surface tracking-tighter leading-none mb-8" style="">
+                        PRECISION <br/><span class="text-primary-fixed" style="">FOOTWEAR FITTING</span>
+</h2>
+<p class="text-surface-variant font-body text-xl md:text-2xl font-medium leading-relaxed" style="">
+                        Each customer gets an attentive and personalised service from our highly qualified shoe fitters.
+                    </p>
+<div class="mt-12">
+<button class="bg-primary text-on-primary font-headline font-bold px-10 py-5 uppercase tracking-tighter hover:bg-primary-dim transition-all rounded-lg" style="">Book a Fitting</button>
+</div>
+</div>
+<div class="w-full md:w-2/5 aspect-[4/5] bg-surface-container-low rounded-lg -rotate-1 shadow-2xl relative z-10 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional shoe fitter kneeling to carefully measure a customer's foot using a traditional Brannock device in a warmly lit boutique store environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3CvT3vDk74EJ_3NIleF7ltjUwfuX9R0GDH1sNF6qppdkj4ZvovLrBAwt10JuSqroQv1qvIx-5Z1NieEv2czodAEbsAV2xC6xhF5h37O86qCe_dHEAodprGR5H5i9ZltYbRn4cuAfIQhcJpru4USh4tKSGOTTFJ96MiufGWRb-czDPZifpuDCwrWo6QU8Xa5Fs5cNIP7DZx9Vc6iWJXJ1ScyA2jHRc_MchaEkEEKqMAZ-NOozM1-XZ94hnDSDjwQT_XefZa69d4A" style=""/>
+</div>
+<!-- Decorative element -->
+<div class="absolute top-0 right-0 w-96 h-96 bg-primary opacity-10 blur-[120px] -mr-48 -mt-48"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-tertiary opacity-10 blur-[100px] -ml-32 -mb-32"></div>
+</div>
+</section>
+</main>
+<!-- Footer Shell - Updated style per COMPONENTS_19 -->
+<footer class="bg-stone-100 dark:bg-stone-900 w-full rounded-t-none">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 w-full max-w-screen-2xl mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-bold text-[#785500] font-headline uppercase mb-6 tracking-widest" style="">Carnegie Shoes</div>
+<p class="text-stone-500 font-body text-sm leading-relaxed mb-8" style="">Serving Carnegie community since 2014</p>
+<div class="flex flex-col gap-3 mt-6 text-stone-500 font-body text-sm">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="">phone</span>
+<span class="" style="">(03) 9569 1526</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="">mail</span>
+<a class="hover:text-primary transition-colors" href="mailto:hello@carnegieshoes.com.au" style="">hello@carnegieshoes.com.au</a>
+</div>
+</div>
+</div>
+<div>
+<h4 class="font-['Space_Grotesk'] text-sm uppercase tracking-widest text-[#00656f] dark:text-[#008d9b] font-bold mb-8" style="">Navigation</h4>
+<ul class="space-y-4"><li class="" style=""><a class="font-['Space_Grotesk'] text-sm uppercase tracking-widest text-stone-500 hover:text-[#00656f] hover:translate-x-1 transition-transform inline-block duration-200" href="#" style="">Home</a></li>
+<li class="" style=""><a class="font-['Space_Grotesk'] text-sm uppercase tracking-widest text-stone-500 hover:text-[#00656f] hover:translate-x-1 transition-transform inline-block duration-200" href="#" style="">Brands we sell</a></li>
+<li class="" style=""><a class="font-['Space_Grotesk'] text-sm uppercase tracking-widest text-stone-500 hover:text-[#00656f] hover:translate-x-1 transition-transform inline-block duration-200" href="#" style="">Our Services</a></li>
+<li class="" style=""><a class="font-['Space_Grotesk'] text-sm uppercase tracking-widest text-stone-500 hover:text-[#00656f] hover:translate-x-1 transition-transform inline-block duration-200" href="#" style="">Contact Us</a></li></ul>
+</div>
+<div>
+<h4 class="font-['Space_Grotesk'] text-sm uppercase tracking-widest text-[#00656f] dark:text-[#008d9b] font-bold mb-8" style="">Location</h4>
+<div class="text-stone-500 font-body text-sm space-y-2">
+<p class="" style="">148 Koornang Road</p>
+<p class="" style="">Carnegie 3163</p>
+<p class="" style=""><br/></p><p class="" style=""><br/></p><p class="font-bold text-[#a92f1a]" style="">Monday: closed</p>
+<p class="" style="">Tuesday - Friday: 10 am - 5 pm</p><p class="" style="">Saturday - Sunday: 10 am - 4 pm</p><p class="font-bold text-[#a92f1a]" style=""><br/></p>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
