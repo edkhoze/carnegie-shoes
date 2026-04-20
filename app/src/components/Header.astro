@@ -17,10 +17,27 @@ const getLinkClasses = (url: string) => {
 ---
 
 <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-outline-variant/30">
-  <div class="flex justify-between items-center px-8 py-6 w-full max-w-screen-2xl mx-auto">
-    <a href="/" class="text-3xl font-black text-primary tracking-tighter font-headline hover:text-secondary transition-colors" aria-label="Go to Carnegie Shoes homepage">
-      Carnegie Shoes
+  <div class="flex justify-between items-center px-8 py-4 w-full max-w-screen-2xl mx-auto">
+    <a href="/" class="hover:opacity-75 transition-opacity" aria-label="Go to Carnegie Shoes homepage">
+      <!--
+        Enhanced logo — resized to 440×150 (2× retina), served as WebP with PNG fallback.
+        mix-blend-mode:multiply removes the white background against the frosted navbar.
+        Original: 5 MB / 3159×1077px → optimised to 13 KB WebP / 52 KB PNG.
+      -->
+      <picture>
+        <source srcset="/logo.webp" type="image/webp" />
+        <img
+          src="/logo.png"
+          alt="Carnegie Shoes"
+          width="220"
+          height="75"
+          class="h-[52px] w-auto"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
     </a>
+
     <div class="hidden md:flex gap-8 items-center">
       {navLinks.map(link => (
         <a href={link.url} class={getLinkClasses(link.url)}>
