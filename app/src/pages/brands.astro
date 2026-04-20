@@ -28,20 +28,29 @@ import Layout from '../layouts/Layout.astro';
         <img loading="lazy" decoding="async" class="w-full h-full object-cover rounded-xl shadow-2xl" alt="Vibrant sneakers" src="/images/IMG_3779.jpeg"/>
       </div>
       <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
-        <div class="bg-primary text-on-primary p-8 rounded-xl flex flex-col justify-between group hover:scale-[1.02] transition-transform cursor-pointer">
-          <div class="font-headline text-4xl font-black tracking-tighter">MERRELL</div>
-          <p class="font-label text-xs uppercase tracking-widest mt-4 opacity-80">Rugged Outdoor Tech</p>
-          <span class="material-symbols-outlined self-end text-3xl mt-8" aria-hidden="true">arrow_outward</span>
+        <div class="bg-primary text-on-primary p-8 rounded-xl flex flex-col justify-between group hover:scale-[1.02] transition-transform relative overflow-hidden">
+          <img loading="lazy" decoding="async" src="/images/merrell_shoes.jpeg" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Merrell shoes" />
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+          <div class="z-10 relative">
+            <div class="font-headline text-4xl font-black tracking-tighter group-hover:text-white transition-colors duration-500">MERRELL</div>
+            <p class="font-label text-xs uppercase tracking-widest mt-4 opacity-80 group-hover:text-stone-200 transition-colors duration-500">Rugged Outdoor Tech</p>
+          </div>
         </div>
-        <div class="bg-surface-variant p-8 rounded-xl flex flex-col justify-between group hover:scale-[1.02] transition-transform cursor-pointer">
-          <div class="font-headline text-4xl font-black tracking-tighter text-on-background">SKECHERS</div>
-          <p class="font-label text-xs uppercase tracking-widest mt-4 text-on-surface-variant">Daily Athletic Comfort</p>
-          <span class="material-symbols-outlined self-end text-3xl mt-8 text-primary" aria-hidden="true">arrow_outward</span>
+        <div class="bg-surface-variant p-8 rounded-xl flex flex-col justify-between group hover:scale-[1.02] transition-transform relative overflow-hidden">
+          <img loading="lazy" decoding="async" src="/images/skechers_range.png" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Skechers shoes" />
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+          <div class="z-10 relative">
+            <div class="font-headline text-4xl font-black tracking-tighter text-on-background group-hover:text-white transition-colors duration-500">SKECHERS</div>
+            <p class="font-label text-xs uppercase tracking-widest mt-4 text-on-surface-variant group-hover:text-stone-200 transition-colors duration-500">Daily Athletic Comfort</p>
+          </div>
         </div>
-        <div class="bg-tertiary text-on-tertiary p-8 rounded-xl flex flex-col justify-between group hover:scale-[1.02] transition-transform cursor-pointer">
-          <div class="font-headline text-4xl font-black tracking-tighter">SAUCONY</div>
-          <p class="font-label text-xs uppercase tracking-widest mt-4 opacity-80">Elite Running Power</p>
-          <span class="material-symbols-outlined self-end text-3xl mt-8" aria-hidden="true">arrow_outward</span>
+        <div class="bg-tertiary text-on-tertiary p-8 rounded-xl flex flex-col justify-between group hover:scale-[1.02] transition-transform relative overflow-hidden">
+          <img loading="lazy" decoding="async" src="/images/saucony_shoes.jpeg" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Saucony shoes" />
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
+          <div class="z-10 relative">
+            <div class="font-headline text-4xl font-black tracking-tighter group-hover:text-white transition-colors duration-500">SAUCONY</div>
+            <p class="font-label text-xs uppercase tracking-widest mt-4 opacity-80 group-hover:text-stone-200 transition-colors duration-500">Elite Running Power</p>
+          </div>
         </div>
       </div>
     </div>
@@ -104,7 +113,7 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- Section 3: Medical/Orthotic Friendly -->
-  <section class="px-8 mb-32 max-w-screen-2xl mx-auto">
+  <section id="care" class="px-8 mb-32 max-w-screen-2xl mx-auto">
     <div class="flex flex-col md:flex-row gap-12 items-end mb-12">
       <div class="flex-1">
         <span class="font-label text-sm tracking-[0.3em] uppercase text-primary font-bold mb-4 block">03 / Care</span>
@@ -120,8 +129,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="absolute bottom-12 left-12 right-12">
           <div class="inline-block bg-white text-primary px-3 py-1 font-label text-[10px] uppercase font-bold tracking-widest mb-4">The Iconic Standard</div>
           <h3 class="font-headline text-6xl font-black text-white tracking-tighter uppercase mb-4">CLARKS</h3>
-          <p class="font-body text-white/90 max-w-xs mb-8">Legendary comfort and anatomical design that sets the industry standard.</p>
-          <button class="bg-white text-on-background px-8 py-3 rounded-full font-label font-bold uppercase text-sm hover:bg-stone-200 transition-colors">View Collection</button>
+          <p class="font-body text-white/90 max-w-xs">Legendary comfort and anatomical design that sets the industry standard.</p>
         </div>
       </div>
       
