@@ -38,6 +38,8 @@ export const server = {
         return { success: true, message: "Message received (Development mode)" };
       }
 
+      const fromEmail = import.meta.env.FROM_EMAIL || 'Carnegie Shoes Website <website@carnegieshoes.com.au>';
+      
       const emailResponse = await fetch('https://api.resend.com/emails', {
         method: 'POST',
         headers: {
@@ -45,7 +47,7 @@ export const server = {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          from: 'Carnegie Shoes Website <website@resend.dev>', // Update this with verified domain later
+          from: fromEmail,
           to: toEmail,
           subject: `New Contact Form Submission from ${input.name}`,
           html: `<p><strong>Name:</strong> ${input.name}</p>
