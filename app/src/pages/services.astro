@@ -1,9 +1,19 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CallToAction from '../components/CallToAction.astro';
+import Icon from '../components/Icon.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://carnegieshoes.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://carnegieshoes.com.au/services" }
+  ]
+};
 ---
 
-<Layout title="Services | Carnegie Shoes" description="Experience our precision shoe fitting and orthotics assessment services at Carnegie Shoes. We help babies, adults, and seniors walk in comfort.">
+<Layout title="Services | Carnegie Shoes" description="Experience our precision shoe fitting and orthotics assessment services at Carnegie Shoes. We help babies, adults, and seniors walk in comfort." structuredData={breadcrumbSchema}>
   <!-- Hero Section: Expressive Collage Header -->
   <section class="px-8 max-w-screen-2xl mx-auto mb-24 pb-20">
     <div class="relative">
@@ -24,7 +34,7 @@ import CallToAction from '../components/CallToAction.astro';
       <!-- Aged Care Package Card (Large, Asymmetric) -->
       <div class="col-span-12 md:col-span-7 bg-surface-container-low p-1 relative overflow-hidden group">
         <div class="relative h-full bg-surface-container-lowest p-8 md:p-12 flex flex-col justify-end min-h-[500px]">
-          <img fetchpriority="high" decoding="async" alt="Professional care" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale hover:grayscale-0 transition-all duration-700" src="/services_hero.jpg"/>
+          <img fetchpriority="high" decoding="async" width="512" height="512" alt="Professional care" class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale hover:grayscale-0 transition-all duration-700" src="/services_hero.jpg"/>
           <div class="relative z-10">
             <span class="inline-block bg-primary px-4 py-1 text-on-primary font-label text-sm mb-6">GOVERNMENT SUPPORTED</span>
             <h2 class="font-headline text-4xl md:text-6xl font-black uppercase tracking-tighter text-on-surface leading-none mb-6">
@@ -40,7 +50,7 @@ import CallToAction from '../components/CallToAction.astro';
       <!-- Shoe Fitters Card (Smaller, Bold Color) -->
       <div class="col-span-12 md:col-span-5 bg-secondary-container p-12 flex flex-col justify-between">
         <div class="mb-12">
-          <span class="material-symbols-outlined text-6xl text-on-secondary-container" aria-hidden="true" style="font-variation-settings: 'FILL' 1;">straighten</span>
+          <Icon name="material-symbols:straighten" class="text-6xl text-on-secondary-container" aria-hidden="true" />
         </div>
         <div>
           <h3 class="font-headline text-4xl font-bold uppercase tracking-tighter text-on-secondary-container leading-none mb-4">
@@ -59,15 +69,15 @@ import CallToAction from '../components/CallToAction.astro';
         </h3>
         <ul class="space-y-4 font-body">
           <li class="flex items-start gap-3">
-            <span class="material-symbols-outlined text-tertiary-container" aria-hidden="true">check_circle</span>
+            <Icon name="material-symbols:check-circle-outline" class="text-tertiary-container" aria-hidden="true" />
             <span>Orthotic-friendly designs</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="material-symbols-outlined text-tertiary-container" aria-hidden="true">check_circle</span>
+            <Icon name="material-symbols:check-circle-outline" class="text-tertiary-container" aria-hidden="true" />
             <span>Customized arch support fitting</span>
           </li>
           <li class="flex items-start gap-3">
-            <span class="material-symbols-outlined text-tertiary-container" aria-hidden="true">check_circle</span>
+            <Icon name="material-symbols:check-circle-outline" class="text-tertiary-container" aria-hidden="true" />
             <span>Post-surgery recovery footwear</span>
           </li>
         </ul>
@@ -84,10 +94,10 @@ import CallToAction from '../components/CallToAction.astro';
           </div>
           <div class="flex gap-4">
             <div class="bg-white p-2 shadow-lg -rotate-3">
-              <img loading="lazy" decoding="async" alt="Community event" class="w-32 h-32 object-cover" src="/services_community1.jpg"/>
+              <img loading="lazy" decoding="async" width="512" height="512" alt="Community event" class="w-32 h-32 object-cover" src="/services_community1.jpg"/>
             </div>
             <div class="bg-white p-2 shadow-lg rotate-6 mt-4">
-              <img loading="lazy" decoding="async" alt="Community connection" class="w-32 h-32 object-cover" src="/services_community2.jpg"/>
+              <img loading="lazy" decoding="async" width="512" height="512" alt="Community connection" class="w-32 h-32 object-cover" src="/services_community2.jpg"/>
             </div>
           </div>
         </div>

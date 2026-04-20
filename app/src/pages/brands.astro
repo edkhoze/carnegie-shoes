@@ -1,8 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://carnegieshoes.com.au/" },
+    { "@type": "ListItem", "position": 2, "name": "Brands", "item": "https://carnegieshoes.com.au/brands" }
+  ]
+};
 ---
 
-<Layout title="Our Brands | Carnegie Shoes" description="Browse our curated footprint of quality shoes. Discover Merrell, Skechers, Propet and more at Carnegie Shoes in Melbourne.">
+<Layout title="Our Brands | Carnegie Shoes" description="Browse our curated footprint of quality shoes. Discover Merrell, Skechers, Propet and more at Carnegie Shoes in Melbourne." structuredData={breadcrumbSchema}>
   <!-- Page Header -->
   <header class="px-8 mb-16 max-w-screen-2xl mx-auto">
     <h1 class="font-headline text-7xl md:text-9xl font-black tracking-tighter uppercase leading-[0.8] mb-6">
@@ -25,11 +34,11 @@ import Layout from '../layouts/Layout.astro';
     
     <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
       <div class="md:col-span-4 h-[500px]">
-        <img loading="lazy" decoding="async" class="w-full h-full object-cover rounded-xl shadow-2xl" alt="Vibrant sneakers" src="/images/IMG_3779.jpeg"/>
+        <img loading="lazy" decoding="async" width="4032" height="3024" class="w-full h-full object-cover rounded-xl shadow-2xl" alt="Vibrant sneakers" src="/images/brands-performance.jpeg"/>
       </div>
       <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
         <div class="bg-primary text-on-primary p-8 rounded-xl flex flex-col justify-between group hover:scale-[1.02] transition-transform relative overflow-hidden">
-          <img loading="lazy" decoding="async" src="/images/merrell_shoes.jpeg" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Merrell shoes" />
+          <img loading="lazy" decoding="async" width="4032" height="3024" src="/images/merrell_shoes.jpeg" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Merrell shoes" />
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
           <div class="z-10 relative">
             <div class="font-headline text-4xl font-black tracking-tighter group-hover:text-white transition-colors duration-500">MERRELL</div>
@@ -37,7 +46,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
         <div class="bg-surface-variant p-8 rounded-xl flex flex-col justify-between group hover:scale-[1.02] transition-transform relative overflow-hidden">
-          <img loading="lazy" decoding="async" src="/images/skechers_range.png" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Skechers shoes" />
+          <img loading="lazy" decoding="async" width="1440" height="1080" src="/images/skechers_range.png" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Skechers shoes" />
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
           <div class="z-10 relative">
             <div class="font-headline text-4xl font-black tracking-tighter text-on-background group-hover:text-white transition-colors duration-500">SKECHERS</div>
@@ -45,7 +54,7 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
         <div class="bg-tertiary text-on-tertiary p-8 rounded-xl flex flex-col justify-between group hover:scale-[1.02] transition-transform relative overflow-hidden">
-          <img loading="lazy" decoding="async" src="/images/saucony_shoes.jpeg" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Saucony shoes" />
+          <img loading="lazy" decoding="async" width="2816" height="1536" src="/images/saucony_shoes.jpeg" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Saucony shoes" />
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
           <div class="z-10 relative">
             <div class="font-headline text-4xl font-black tracking-tighter group-hover:text-white transition-colors duration-500">SAUCONY</div>
@@ -73,7 +82,7 @@ import Layout from '../layouts/Layout.astro';
             <div class="font-headline text-6xl font-black tracking-tighter mb-4">ARA</div>
             <p class="font-body text-on-surface-variant">German precision meet contemporary fashion. High-soft technology in every step.</p>
           </div>
-          <img loading="lazy" decoding="async" class="w-48 h-48 object-cover absolute -right-4 -bottom-4 opacity-20 group-hover:opacity-100 group-hover:-translate-y-4 transition-all duration-500" alt="Ara shoes" src="/images/IMG_3782.jpeg"/>
+          <img loading="lazy" decoding="async" width="4032" height="3024" class="w-48 h-48 object-cover absolute -right-4 -bottom-4 opacity-20 group-hover:opacity-100 group-hover:-translate-y-4 transition-all duration-500" alt="Ara shoes" src="/images/brands-ara.jpeg"/>
         </div>
         <div class="grid grid-cols-2 gap-4 md:col-span-2">
           <div class="bg-secondary p-8 rounded-xl flex flex-col justify-center text-center hover:bg-primary transition-colors cursor-pointer text-white">
@@ -124,7 +133,7 @@ import Layout from '../layouts/Layout.astro';
     
     <div class="grid md:grid-cols-2 gap-8 mb-16">
       <div class="relative group overflow-hidden rounded-2xl">
-        <img loading="lazy" decoding="async" class="w-full h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Leather boots" src="/brands_clarks.jpg"/>
+        <img loading="lazy" decoding="async" width="512" height="512" class="w-full h-[600px] object-cover grayscale hover:grayscale-0 transition-all duration-700" alt="Leather boots" src="/brands_clarks.jpg"/>
         <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
         <div class="absolute bottom-12 left-12 right-12">
           <div class="inline-block bg-white text-primary px-3 py-1 font-label text-[10px] uppercase font-bold tracking-widest mb-4">The Iconic Standard</div>

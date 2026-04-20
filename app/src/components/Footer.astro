@@ -1,4 +1,6 @@
 ---
+import Icon from './Icon.astro';
+
 const navLinks = [
   { text: 'Home', url: '/' },
   { text: 'Brands we sell', url: '/brands' },
@@ -7,18 +9,18 @@ const navLinks = [
 ];
 ---
 
-<footer class="bg-stone-100 dark:bg-stone-900 border-t border-outline-variant/30">
+<footer class="bg-stone-100 border-t border-outline-variant/30">
   <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 w-full max-w-screen-2xl mx-auto">
     <div class="space-y-6">
       <div class="text-xl font-bold text-secondary font-label uppercase tracking-widest">Carnegie Shoes</div>
       <p class="font-body text-sm text-stone-500 uppercase tracking-widest leading-relaxed">Serving Carnegie<br>community since 2014</p>
       <div class="space-y-4 pt-4">
         <div class="flex gap-3 text-stone-500 font-body text-sm uppercase tracking-widest">
-          <span class="material-symbols-outlined text-lg" aria-hidden="true">call</span>
+          <Icon name="material-symbols:call-outline" class="text-lg" aria-hidden="true" />
           <a href="tel:0395691526" class="hover:text-primary transition-colors" aria-label="Call Carnegie Shoes">(03) 9569 1526</a>
         </div>
         <div class="flex gap-3 text-stone-500 font-body text-sm uppercase tracking-widest">
-          <span class="material-symbols-outlined text-lg" aria-hidden="true">mail</span>
+          <Icon name="material-symbols:mail-outline" class="text-lg" aria-hidden="true" />
           <a href="mailto:info@carnegieshoes.com.au" class="hover:text-primary transition-colors" aria-label="Email Carnegie Shoes">info@carnegieshoes.com.au</a>
         </div>
       </div>

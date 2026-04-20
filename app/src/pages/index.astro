@@ -1,17 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
 
+// NAP (Name/Address/Phone) must match the visible site and Google Business Profile exactly.
+// sameAs should list public profiles (Facebook/Instagram/Google Business Profile) when available —
+// Google uses it to link this entity to those profiles.
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "ShoeStore",
   "name": "Carnegie Shoes",
-  "image": "https://carnegieshoes.com.au/hero_lifestyle_1776061010416.png",
+  "image": "https://carnegieshoes.com.au/logo.png",
   "@id": "https://carnegieshoes.com.au",
   "url": "https://carnegieshoes.com.au",
-  "telephone": "(03) 9571 5203",
+  "telephone": "+61395691526",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "119 Koornang Road",
+    "streetAddress": "148 Koornang Road",
     "addressLocality": "Carnegie",
     "addressRegion": "VIC",
     "postalCode": "3163",
@@ -25,17 +29,21 @@ const localBusinessSchema = {
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      "opens": "09:00",
-      "closes": "17:30"
+      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "10:00",
+      "closes": "17:00"
     },
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": "Saturday",
-      "opens": "09:00",
-      "closes": "14:00"
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "10:00",
+      "closes": "16:00"
     }
   ],
+  // TODO: populate with public profile URLs, e.g.:
+  //   "https://www.facebook.com/carnegieshoes"
+  //   "https://www.instagram.com/carnegieshoes"
+  //   "https://www.google.com/maps/place/..." (Google Business Profile)
   "sameAs": []
 };
 ---
@@ -45,7 +53,7 @@ const localBusinessSchema = {
     <div class="grid grid-cols-1 md:grid-cols-12 gap-0 relative">
       <!-- Large Display Image -->
       <div class="md:col-span-8 h-[716px] relative overflow-hidden bg-surface-container-low">
-        <img class="w-full h-full object-cover" fetchpriority="high" decoding="async" alt="Stylish energetic sneakers" src="/images/IMG_3776.jpeg"/>
+        <img class="w-full h-full object-cover" width="4032" height="3024" fetchpriority="high" decoding="async" alt="Stylish energetic sneakers" src="/images/home-hero-sneakers.jpeg"/>
         <div class="absolute inset-0 bg-gradient-to-t from-tertiary/20 to-transparent"></div>
       </div>
       <!-- Overlapping Text Block -->
@@ -81,7 +89,7 @@ const localBusinessSchema = {
     <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-auto md:h-[800px]">
       <!-- Large Focus Card -->
       <div class="md:col-span-2 md:row-span-2 bg-surface-container-low relative group overflow-hidden">
-        <img loading="lazy" decoding="async" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Neighborhood energy" src="/images/IMG_3784.jpeg"/>
+        <img loading="lazy" decoding="async" width="4032" height="3024" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Neighborhood energy" src="/images/home-heritage.jpeg"/>
         <div class="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors"></div>
         <div class="absolute bottom-0 left-0 p-8 text-white z-10">
           <span class="bg-primary px-3 py-1 font-label text-xs uppercase mb-2 inline-block">The Foundation</span>
@@ -92,7 +100,7 @@ const localBusinessSchema = {
       <!-- Kids Segment -->
       <div class="md:col-span-2 bg-secondary-container p-8 flex flex-col justify-between relative overflow-hidden group">
         <!-- Hover Image -->
-        <img loading="lazy" decoding="async" src="/hover_kids.png" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Kid trying shoes" />
+        <img loading="lazy" decoding="async" width="1024" height="1024" src="/hover_kids.png" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Kid trying shoes" />
         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
         <!-- Content -->
         <div class="z-10 relative">
@@ -100,7 +108,7 @@ const localBusinessSchema = {
           <p class="font-body text-on-secondary-container group-hover:text-stone-200 transition-colors duration-500 max-w-xs">Durable, vibrant footwear for the smallest members of our neighborhood.</p>
         </div>
         <div class="flex justify-end z-10 relative">
-          <span class="material-symbols-outlined text-6xl text-on-secondary-container opacity-30 group-hover:text-white group-hover:opacity-80 transition-all duration-500" aria-hidden="true">child_care</span>
+          <Icon name="material-symbols:child-care-outline" class="text-6xl text-on-secondary-container opacity-30 group-hover:text-white group-hover:opacity-80 transition-all duration-500" aria-hidden="true" />
         </div>
         <div class="absolute -right-8 -bottom-8 w-48 h-48 bg-primary/10 rounded-full blur-3xl z-0 group-hover:opacity-0 transition-opacity duration-500"></div>
       </div>
@@ -108,22 +116,22 @@ const localBusinessSchema = {
       <!-- Senior Comfort -->
       <div class="bg-surface-container-highest p-8 flex flex-col justify-between group transition-colors relative overflow-hidden">
         <!-- Hover Image -->
-        <img loading="lazy" decoding="async" src="/hover_senior.png" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Senior comfort" />
+        <img loading="lazy" decoding="async" width="1024" height="1024" src="/hover_senior.png" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Senior comfort" />
         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
         <!-- Content -->
         <div class="z-10 relative">
-          <span class="material-symbols-outlined text-4xl mb-4 group-hover:text-white transition-colors duration-500" aria-hidden="true">nordic_walking</span>
+          <Icon name="material-symbols:nordic-walking" class="text-4xl mb-4 group-hover:text-white transition-colors duration-500" aria-hidden="true" />
           <h3 class="font-headline text-xl font-bold uppercase group-hover:text-white transition-colors duration-500">Golden Years Comfort</h3>
         </div>
         <a href="/brands#care" class="font-label text-sm uppercase font-bold text-on-surface group-hover:text-white transition-colors duration-500 flex items-center gap-2 z-10 relative" aria-label="View our senior and orthotic offerings">
-            View Range <span class="material-symbols-outlined text-xs" aria-hidden="true">arrow_forward</span>
+            View Range <Icon name="material-symbols:arrow-forward" class="text-xs" aria-hidden="true" />
         </a>
       </div>
       
       <!-- Community Event -->
       <div class="bg-primary-container p-8 flex flex-col justify-between relative overflow-hidden group">
         <!-- Hover Image -->
-        <img loading="lazy" decoding="async" src="/hover_discount.png" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Local business discount" />
+        <img loading="lazy" decoding="async" width="1024" height="1024" src="/hover_discount.png" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" alt="Local business discount" />
         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0"></div>
         <!-- Content -->
         <div class="font-headline text-on-primary-container group-hover:text-white transition-colors duration-500 z-10 relative">
@@ -150,7 +158,7 @@ const localBusinessSchema = {
         </div>
       </div>
       <div class="w-full md:w-2/5 aspect-[4/5] bg-surface-container-low rounded-lg -rotate-1 shadow-2xl relative z-10 overflow-hidden">
-        <img loading="lazy" decoding="async" class="w-full h-full object-cover" alt="Professional shoe fitting" src="/home_fitting.jpg"/>
+        <img loading="lazy" decoding="async" width="512" height="512" class="w-full h-full object-cover" alt="Professional shoe fitting" src="/home_fitting.jpg"/>
       </div>
       <!-- Decorative element -->
       <div class="absolute top-0 right-0 w-96 h-96 bg-primary opacity-10 blur-[120px] -mr-48 -mt-48"></div>

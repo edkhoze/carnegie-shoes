@@ -3,8 +3,6 @@ import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 import cloudflare from '@astrojs/cloudflare';
-import partytown from '@astrojs/partytown';
-
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
@@ -16,5 +14,5 @@ export default defineConfig({
 
   output: 'static',
   adapter: cloudflare(),
-  integrations: [partytown(), sitemap()]
+  integrations: [sitemap()]
 });

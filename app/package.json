@@ -16,8 +16,10 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^13.1.8",
-    "@astrojs/partytown": "^2.1.6",
     "@astrojs/sitemap": "^3.7.2",
+    "@fontsource-variable/epilogue": "^5.2.5",
+    "@fontsource-variable/manrope": "^5.2.5",
+    "@fontsource-variable/space-grotesk": "^5.2.5",
     "@tailwindcss/vite": "^4.2.2",
     "astro": "^6.1.5",
     "tailwindcss": "^4.2.2",

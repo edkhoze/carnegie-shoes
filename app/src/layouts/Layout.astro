@@ -9,8 +9,8 @@ interface Props {
   structuredData?: any;
 }
 
-const { 
-  title, 
+const {
+  title,
   description = "Since 2014, Carnegie Shoes provides precision footwear fitting & orthotics. Durable, comfortable brands for infants, adults, and seniors.",
   structuredData
 } = Astro.props;
@@ -18,6 +18,7 @@ const {
 const currentPath = Astro.url.pathname;
 const siteUrl = "https://carnegieshoes.com.au";
 const canonicalURL = new URL(currentPath, siteUrl).href;
+const cfAnalyticsToken = import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN;
 ---
 
 <!doctype html>
@@ -26,10 +27,12 @@ const canonicalURL = new URL(currentPath, siteUrl).href;
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#E2583E" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
-    
+
     <!-- Open Graph SEO -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
@@ -40,15 +43,7 @@ const canonicalURL = new URL(currentPath, siteUrl).href;
     {structuredData && (
       <script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script>
     )}
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect" />
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
-    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@700;800;900&family=Manrope:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
-    
-    <!-- Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-    
+
     <title>{title}</title>
   </head>
   <body>
@@ -59,5 +54,48 @@ const canonicalURL = new URL(currentPath, siteUrl).href;
     </div>
 
     <Footer />
+
+    {cfAnalyticsToken && (
+      <script
+        is:inline
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={`{"token": "${cfAnalyticsToken}"}`}
+      ></script>
+    )}
+
+    {/* Lightweight conversion tracking: forwards tel/mailto/maps/form-submit events
+        to Cloudflare Web Analytics (window.__cfBeacon.sendEvent) or any listener on
+        `window.trackConversion`. No-ops gracefully if analytics hasn't loaded. */}
+    <script is:inline>
+      (function () {
+        function track(name, detail) {
+          try {
+            if (typeof window.trackConversion === 'function') {
+              window.trackConversion(name, detail);
+            }
+            if (window.__cfBeacon && typeof window.__cfBeacon.sendEvent === 'function') {
+              window.__cfBeacon.sendEvent(name, detail);
+            }
+          } catch (_) { /* swallow */ }
+        }
+
+        document.addEventListener('click', function (e) {
+          var a = e.target && e.target.closest && e.target.closest('a');
+          if (!a) return;
+          var href = a.getAttribute('href') || '';
+          if (href.startsWith('tel:')) track('click_phone', { href: href });
+          else if (href.startsWith('mailto:')) track('click_email', { href: href });
+          else if (href.indexOf('maps.app.goo.gl') !== -1 || href.indexOf('maps.google') !== -1) track('click_directions', { href: href });
+        }, { passive: true });
+
+        document.addEventListener('submit', function (e) {
+          var form = e.target;
+          if (form && form.matches && form.matches('form[method="POST"]')) {
+            track('submit_contact_form', { action: form.getAttribute('action') || '' });
+          }
+        }, { passive: true });
+      })();
+    </script>
   </body>
 </html>

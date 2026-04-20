@@ -1,41 +1,47 @@
 @import 'tailwindcss';
 
+/* Self-hosted variable fonts (served from the app bundle, not Google Fonts CDN).
+   Removes render-blocking third-party requests and preserves visitor privacy. */
+@import '@fontsource-variable/epilogue';
+@import '@fontsource-variable/manrope';
+@import '@fontsource-variable/space-grotesk';
+
 @theme {
   --color-primary: #E2583E;
   --color-on-primary: #ffffff;
   --color-primary-container: #ffdbd1;
   --color-on-primary-container: #3b0900;
-  
+
   --color-secondary: #785500;
   --color-on-secondary: #ffffff;
   --color-secondary-container: #ffc965;
   --color-on-secondary-container: #5f4200;
-  
+
   --color-tertiary: #00656f;
   --color-on-tertiary: #ffffff;
   --color-tertiary-container: #a1f2fe;
   --color-on-tertiary-container: #005d65;
-  
+
   --color-background: #f6f6f9;
   --color-on-background: #2d2f31;
-  
+
   --color-surface: #f6f6f9;
   --color-on-surface: #2d2f31;
-  
+
   --color-surface-variant: #dbdde0;
   --color-on-surface-variant: #5a5c5e;
-  
+
   --color-surface-container-low: #f0f0f3;
   --color-surface-container: #e7e8eb;
   --color-surface-container-high: #e1e2e6;
   --color-surface-container-highest: #dbdde0;
-  
+
   --color-outline: #757779;
   --color-outline-variant: #acadaf;
 
-  --font-headline: 'Epilogue', sans-serif;
-  --font-body: 'Manrope', sans-serif;
-  --font-label: 'Space Grotesk', sans-serif;
+  --font-headline: 'Epilogue Variable', sans-serif;
+  --font-body: 'Manrope Variable', sans-serif;
+  --font-label: 'Space Grotesk Variable', sans-serif;
 }
 
 @layer base {
@@ -56,8 +62,4 @@
   .text-mosaic {
     letter-spacing: -0.04em;
   }
-}
-
-.material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }

@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(node -e \"const d = require\\('/c/src/carnegieshoes/app/node_modules/@iconify-json/material-symbols/icons.json'\\); const want=['call','call-outline','mail','mail-outline','location-on','location-on-outline','arrow-forward','arrow-forward-outline','check','check-outline','straighten','straighten-outline','check-circle','check-circle-outline','child-care','child-care-outline','nordic-walking','nordic-walking-outline']; want.forEach\\(n => console.log\\(n, n in d.icons ? 'OK' : \\(d.aliases && n in d.aliases ? 'alias' : 'MISSING'\\)\\)\\);\")",
+      "Bash(node -e \"const d = require\\('@iconify-json/material-symbols/icons.json'\\); const want=['call','call-outline','mail','mail-outline','location-on','location-on-outline','arrow-forward','arrow-forward-outline','check','check-outline','straighten','straighten-outline','check-circle','check-circle-outline','child-care','child-care-outline','nordic-walking','nordic-walking-outline']; want.forEach\\(n => console.log\\(n, n in d.icons ? 'OK' : \\(d.aliases && n in d.aliases ? 'alias' : 'MISSING'\\)\\)\\);\")",
+      "Bash(npm run *)",
+      "Bash(mv IMG_3776.jpeg home-hero-sneakers.jpeg)",
+      "Bash(mv IMG_3777.jpeg store-interior.jpeg)",
+      "Bash(mv IMG_3779.jpeg brands-performance.jpeg)",
+      "Bash(mv IMG_3782.jpeg brands-ara.jpeg)",
+      "Bash(mv IMG_3784.jpeg home-heritage.jpeg)",
+      "Bash(npx playwright *)",
+      "Bash(pkill -f \"astro dev\")",
+      "Bash(pkill -f \"npm run dev\")",
+      "Bash(curl -s -o /tmp/home.html -w \"HTTP %{http_code}\\\\n\" http://localhost:4326/)",
+      "Bash(curl -s -o /tmp/contact.html -w \"HTTP %{http_code}\\\\n\" http://localhost:4326/contact)",
+      "Bash(kill 1492)",
+      "Bash(kill 1481)",
+      "Bash(kill 1457)",
+      "Bash(kill 1518)",
+      "Bash(git stash *)",
+      "Bash(kill 1539)"
+    ]
+  }
+}
