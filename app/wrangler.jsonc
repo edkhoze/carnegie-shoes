@@ -7,6 +7,10 @@
 		"directory": "./dist",
 		"binding": "ASSETS"
 	},
+	"vars": {
+		"FROM_EMAIL": "website@carnegieshoes.com.au",
+		"TO_EMAIL": "evagorelik@yahoo.com.au"
+	},
 	"observability": {
 		"enabled": true
 	}

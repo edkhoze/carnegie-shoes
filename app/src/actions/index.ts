@@ -1,5 +1,18 @@
-import { defineAction } from 'astro:actions';
+import { defineAction, ActionError } from 'astro:actions';
 import { z } from 'astro:schema';
+
+/**
+ * Helper: read an env var from Cloudflare runtime bindings first,
+ * then fall back to import.meta.env (works in local dev with .env file).
+ */
+function getEnv(context: any, key: string): string | undefined {
+  // Cloudflare Pages runtime bindings (set in dashboard / wrangler secrets)
+  const cfEnv = context?.locals?.runtime?.env;
+  if (cfEnv && cfEnv[key]) return cfEnv[key];
+
+  // Fallback: import.meta.env (local dev / .env file)
+  return (import.meta.env as Record<string, string>)[key];
+}
 
 export const server = {
   contact: defineAction({
@@ -11,9 +24,9 @@ export const server = {
       message: z.string().min(1, "Message is required"),
       'cf-turnstile-response': z.string()
     }),
-    handler: async (input) => {
+    handler: async (input, context) => {
       // 1. Verify Turnstile token
-      const secret = import.meta.env.TURNSTILE_SECRET_KEY || '1x0000000000000000000000000000000AA'; // dummy secret
+      const secret = getEnv(context, 'TURNSTILE_SECRET_KEY') || '1x0000000000000000000000000000000AA';
       
       const turnstileVerify = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
         method: 'POST',
@@ -26,19 +39,19 @@ export const server = {
       
       const turnstileOutcome = await turnstileVerify.json();
       if (!turnstileOutcome.success) {
-        throw new Error('Bot verification failed. Please try again.');
+        throw new ActionError({ code: 'FORBIDDEN', message: 'Bot verification failed. Please try again.' });
       }
 
       // 2. Send Email via Resend API
-      const resendApiKey = import.meta.env.RESEND_API_KEY;
-      const toEmail = import.meta.env.TO_EMAIL || 'evagorelik@yahoo.com.au';
+      const resendApiKey = getEnv(context, 'RESEND_API_KEY');
+      const toEmail = getEnv(context, 'TO_EMAIL') || 'evagorelik@yahoo.com.au';
       
       if (!resendApiKey) {
         console.warn('RESEND_API_KEY not found in env. Skipping email send for development.');
         return { success: true, message: "Message received (Development mode)" };
       }
 
-      const fromEmail = import.meta.env.FROM_EMAIL || 'Carnegie Shoes Website <website@carnegieshoes.com.au>';
+      const fromEmail = getEnv(context, 'FROM_EMAIL') || 'Carnegie Shoes Website <website@carnegieshoes.com.au>';
       
       const emailResponse = await fetch('https://api.resend.com/emails', {
         method: 'POST',
@@ -61,10 +74,11 @@ export const server = {
       if (!emailResponse.ok) {
         const err = await emailResponse.json();
         console.error('Resend Error:', err);
-        throw new Error('Failed to send email. Please try again later.');
+        throw new ActionError({ code: 'INTERNAL_SERVER_ERROR', message: 'Failed to send email. Please try again later.' });
       }
 
       return { success: true, message: "Thank you! We have received your inquiry and will be in touch soon." };
     }
   })
 };
+
