@@ -22,10 +22,15 @@ export const server = {
       email: z.string().email("Invalid email address"),
       phone: z.string().optional(),
       message: z.string().min(1, "Message is required"),
-      'cf-turnstile-response': z.string()
+      'cf-turnstile-response': z.string().optional().default('')
     }),
     handler: async (input) => {
       // 1. Verify Turnstile token
+      const turnstileToken = input['cf-turnstile-response'];
+      if (!turnstileToken) {
+        throw new ActionError({ code: 'BAD_REQUEST', message: 'Please complete the verification challenge before submitting.' });
+      }
+
       const secret = getEnv('TURNSTILE_SECRET_KEY') || '1x0000000000000000000000000000000AA';
       
       const turnstileVerify = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
@@ -33,7 +38,7 @@ export const server = {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({
           secret: secret,
-          response: input['cf-turnstile-response']
+          response: turnstileToken
         }).toString()
       });
       
