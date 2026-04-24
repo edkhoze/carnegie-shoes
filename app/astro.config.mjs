@@ -12,7 +12,7 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
 
-  output: 'hybrid',
+  output: 'static',
   adapter: cloudflare(),
   integrations: [sitemap()]
 });
