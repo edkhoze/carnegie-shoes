@@ -1,14 +1,14 @@
 import { defineAction, ActionError } from 'astro:actions';
 import { z } from 'astro:schema';
+import { env } from 'cloudflare:workers';
 
 /**
- * Helper: read an env var from Cloudflare runtime bindings first,
- * then fall back to import.meta.env (works in local dev with .env file).
+ * Read an env var from Cloudflare runtime bindings (wrangler vars + dashboard secrets).
+ * Falls back to import.meta.env for local dev with a .env file.
  */
-function getEnv(context: any, key: string): string | undefined {
-  // Cloudflare Pages runtime bindings (set in dashboard / wrangler secrets)
-  const cfEnv = context?.locals?.runtime?.env;
-  if (cfEnv && cfEnv[key]) return cfEnv[key];
+function getEnv(key: string): string | undefined {
+  // Cloudflare runtime bindings
+  if (env && (env as any)[key]) return (env as any)[key];
 
   // Fallback: import.meta.env (local dev / .env file)
   return (import.meta.env as Record<string, string>)[key];
@@ -24,9 +24,9 @@ export const server = {
       message: z.string().min(1, "Message is required"),
       'cf-turnstile-response': z.string()
     }),
-    handler: async (input, context) => {
+    handler: async (input) => {
       // 1. Verify Turnstile token
-      const secret = getEnv(context, 'TURNSTILE_SECRET_KEY') || '1x0000000000000000000000000000000AA';
+      const secret = getEnv('TURNSTILE_SECRET_KEY') || '1x0000000000000000000000000000000AA';
       
       const turnstileVerify = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
         method: 'POST',
@@ -43,15 +43,15 @@ export const server = {
       }
 
       // 2. Send Email via Resend API
-      const resendApiKey = getEnv(context, 'RESEND_API_KEY');
-      const toEmail = getEnv(context, 'TO_EMAIL') || 'evagorelik@yahoo.com.au';
+      const resendApiKey = getEnv('RESEND_API_KEY');
+      const toEmail = getEnv('TO_EMAIL') || 'evagorelik@yahoo.com.au';
       
       if (!resendApiKey) {
         console.warn('RESEND_API_KEY not found in env. Skipping email send for development.');
         return { success: true, message: "Message received (Development mode)" };
       }
 
-      const fromEmail = getEnv(context, 'FROM_EMAIL') || 'Carnegie Shoes Website <website@carnegieshoes.com.au>';
+      const fromEmail = getEnv('FROM_EMAIL') || 'Carnegie Shoes Website <website@carnegieshoes.com.au>';
       
       const emailResponse = await fetch('https://api.resend.com/emails', {
         method: 'POST',
@@ -81,4 +81,3 @@ export const server = {
     }
   })
 };
-

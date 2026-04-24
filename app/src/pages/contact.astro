@@ -8,8 +8,12 @@ const result = Astro.getActionResult(actions.contact);
 const isSuccess = result?.data?.success;
 const serverError = result?.error;
 
-// Setup generic Turnstile testing keys if we want it to work without real keys in dev
-const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '1x00000000000000000000AA';
+import { env } from 'cloudflare:workers';
+
+// Read Turnstile site key from Cloudflare bindings (dashboard secret), fallback to testing key for local dev
+const turnstileSiteKey = (env as any)?.PUBLIC_TURNSTILE_SITE_KEY
+  || import.meta.env.PUBLIC_TURNSTILE_SITE_KEY
+  || '1x00000000000000000000AA';
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",

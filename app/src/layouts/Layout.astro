@@ -18,7 +18,7 @@ const {
 const currentPath = Astro.url.pathname;
 const siteUrl = "https://carnegieshoes.com.au";
 const canonicalURL = new URL(currentPath, siteUrl).href;
-const cfAnalyticsToken = import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN;
+
 ---
 
 <!doctype html>
@@ -55,14 +55,7 @@ const cfAnalyticsToken = import.meta.env.PUBLIC_CF_ANALYTICS_TOKEN;
 
     <Footer />
 
-    {cfAnalyticsToken && (
-      <script
-        is:inline
-        defer
-        src="https://static.cloudflareinsights.com/beacon.min.js"
-        data-cf-beacon={`{"token": "${cfAnalyticsToken}"}`}
-      ></script>
-    )}
+
 
     {/* Lightweight conversion tracking: forwards tel/mailto/maps/form-submit events
         to Cloudflare Web Analytics (window.__cfBeacon.sendEvent) or any listener on
